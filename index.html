@@ -12,6 +12,12 @@ body {
   color: #f5f5f5;
   font-family: "Georgia", serif;
   text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 .container {
@@ -19,15 +25,8 @@ body {
 }
 
 .logo {
-  width: 180px;
+  width: 260px;
   margin-bottom: 20px;
-}
-
-.subtitle {
-  letter-spacing: 4px;
-  font-size: 12px;
-  color: #aaa;
-  margin-bottom: 30px;
 }
 
 .line {
@@ -37,11 +36,16 @@ body {
   background: linear-gradient(to right, #002395, white, #ED2939);
 }
 
+.subtitle {
+  letter-spacing: 4px;
+  font-size: 12px;
+  color: #aaa;
+}
+
 .text {
   max-width: 600px;
   margin: 40px auto;
   font-size: 16px;
-  line-height: 1.6;
   color: #ccc;
   font-style: italic;
 }
@@ -51,16 +55,6 @@ body {
   padding: 30px 20px;
   max-width: 600px;
   margin: 40px auto;
-}
-
-.catalogue-title {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.catalogue-desc {
-  color: #aaa;
-  margin-bottom: 20px;
 }
 
 .btn {
@@ -78,16 +72,28 @@ body {
   color: #000;
 }
 
+.actions {
+  margin-top: 40px;
+}
+
 .whatsapp {
-  display: block;
-  margin: 30px auto;
-  max-width: 300px;
-  padding: 15px;
-  background: #25D366;
-  color: white;
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  border: 1px solid #25D366;
+  color: #25D366;
   text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
+  font-size: 14px;
+}
+
+.maps {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 footer {
@@ -112,24 +118,27 @@ footer {
 </div>
 
 <div class="text">
-Chez Maison Rameaux, chaque produit est sélectionné avec soin.  
-Une épicerie fine où l’artisanat et la qualité se rencontrent, du matin jusqu’au soir.
+Chez Maison Rameaux, chaque produit est sélectionné avec soin.
+Une épicerie fine où l’artisanat et la qualité se rencontrent.
 </div>
 
 <div class="catalogue-box">
-  <div class="catalogue-title">Catalogue Maison Rameaux</div>
-  <div class="catalogue-desc">
-    Produits frais, épicerie fine, charcuterie artisanale, boissons & spécialités
-  </div>
+  <h2>Catalogue Maison Rameaux</h2>
 
   <a href="catalogue.pdf" class="btn" target="_blank">
     OUVRIR LE CATALOGUE
   </a>
 </div>
 
-<a href="https://wa.me/212XXXXXXXXX" class="whatsapp">
-📲 Commander sur WhatsApp
-</a>
+<div class="actions">
+  <a href="https://wa.me/212XXXXXXXXX" class="whatsapp">
+    WhatsApp
+  </a>
+
+  <a href="https://maps.google.com/?q=TON+ADRESSE" class="maps">
+    Itinéraire
+  </a>
+</div>
 
 <footer>
 © Maison Rameaux
