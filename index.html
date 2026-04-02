@@ -1,96 +1,141 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Maison Rameaux</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Rameaux</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #f5f5f5;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  background: #000;
+  color: #f5f5f5;
+  font-family: "Georgia", serif;
+  text-align: center;
+}
 
-    header {
-      padding: 40px 20px 20px;
-    }
+.container {
+  padding: 40px 20px;
+}
 
-    img.logo {
-      width: 200px;
-      max-width: 80%;
-    }
+.logo {
+  width: 180px;
+  margin-bottom: 20px;
+}
 
-    h1 {
-      margin-top: 20px;
-      font-size: 28px;
-      letter-spacing: 1px;
-    }
+.subtitle {
+  letter-spacing: 4px;
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 30px;
+}
 
-    p {
-      color: #ccc;
-      max-width: 500px;
-      margin: 20px auto;
-    }
+.line {
+  width: 80%;
+  height: 2px;
+  margin: 20px auto;
+  background: linear-gradient(to right, #002395, white, #ED2939);
+}
 
-    .buttons {
-      margin-top: 30px;
-    }
+.text {
+  max-width: 600px;
+  margin: 40px auto;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+  font-style: italic;
+}
 
-    .btn {
-      display: block;
-      margin: 15px auto;
-      padding: 15px 25px;
-      width: 80%;
-      max-width: 300px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.catalogue-box {
+  border: 1px solid #444;
+  padding: 30px 20px;
+  max-width: 600px;
+  margin: 40px auto;
+}
 
-    .catalogue {
-      background-color: #f5f5f5;
-      color: #000;
-    }
+.catalogue-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
 
-    .whatsapp {
-      background-color: #25D366;
-      color: white;
-    }
+.catalogue-desc {
+  color: #aaa;
+  margin-bottom: 20px;
+}
 
-    footer {
-      margin-top: 50px;
-      font-size: 12px;
-      color: #777;
-    }
-  </style>
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 2px;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.whatsapp {
+  display: block;
+  margin: 30px auto;
+  max-width: 300px;
+  padding: 15px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+footer {
+  margin-top: 50px;
+  color: #666;
+  font-size: 12px;
+}
+</style>
+
 </head>
 
 <body>
 
-<header>
-  <img src="logo.png" alt="Maison Rameaux" class="logo">
-  <h1>Maison Rameaux</h1>
-  <p>Charcutier & Traiteur – Produits artisanaux de qualité</p>
-</header>
+<div class="container">
 
-<div class="buttons">
+<img src="logo.png" class="logo">
 
-  <a href="catalogue.pdf" class="btn catalogue" target="_blank">
-    📖 Voir le catalogue
-  </a>
+<div class="line"></div>
 
-  <a href="https://wa.me/212XXXXXXXXX" class="btn whatsapp">
-    📲 Commander sur WhatsApp
-  </a>
-
+<div class="subtitle">
+ÉPICERIE FINE • TRAITEUR • CHARCUTERIE ARTISANALE HALAL
 </div>
 
+<div class="text">
+Chez Maison Rameaux, chaque produit est sélectionné avec soin.  
+Une épicerie fine où l’artisanat et la qualité se rencontrent, du matin jusqu’au soir.
+</div>
+
+<div class="catalogue-box">
+  <div class="catalogue-title">Catalogue Maison Rameaux</div>
+  <div class="catalogue-desc">
+    Produits frais, épicerie fine, charcuterie artisanale, boissons & spécialités
+  </div>
+
+  <a href="catalogue.pdf" class="btn" target="_blank">
+    OUVRIR LE CATALOGUE
+  </a>
+</div>
+
+<a href="https://wa.me/212XXXXXXXXX" class="whatsapp">
+📲 Commander sur WhatsApp
+</a>
+
 <footer>
-  © Maison Rameaux
+© Maison Rameaux
 </footer>
+
+</div>
 
 </body>
 </html>
