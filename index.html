@@ -22,14 +22,15 @@ body {
 }
 
 .container {
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 /* LOGO FLOTTANT */
 .logo {
   width: 300px;
-  margin-bottom: 30px;
-  animation: float 4s ease-in-out infinite;
+  margin-bottom: 40px;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 10px 20px rgba(255,255,255,0.05));}
 }
 
 @keyframes float {
@@ -39,11 +40,12 @@ body {
 }
 
 /* LIGNE PLUS HAUTE */
-.line {
-  width: 70%;
-  height: 2px;
-  margin: 40px auto 10px;
-  background: linear-gradient(to right, #002395, white, #ED2939);
+
+.logo {
+  width: 300px;
+  margin-bottom: 40px;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 10px 20px rgba(255,255,255,0.05));
 }
 
 /* TEXTE */
@@ -57,8 +59,9 @@ body {
 .text {
   max-width: 600px;
   margin: 60px auto;
-  font-size: 16px;
-  color: #bbb;
+  font-size: 15px;
+  color: #aaa;
+  letter-spacing: 0.5px;
   font-style: italic;
   line-height: 1.7;
 }
@@ -68,7 +71,8 @@ body {
   display: inline-block;
   margin-top: 30px;
   padding: 14px 28px;
-  border: 1px solid #888;
+  border: 1px solid #666;
+  background: transparent;
   color: #fff;
   text-decoration: none;
   letter-spacing: 2px;
@@ -87,10 +91,10 @@ body {
 
 .actions a {
   margin: 0 15px;
-  font-size: 13px;
-  color: #aaa;
+  font-size: 12px;
+  color: #888;
   text-decoration: none;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .actions a:hover {
