@@ -6,6 +6,7 @@
 <title>Maison Rameaux</title>
 
 <style>
+
 body {
   margin: 0;
   background: #000;
@@ -21,88 +22,88 @@ body {
 }
 
 .container {
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
+/* LOGO FLOTTANT */
 .logo {
-  width: 260px;
-  margin-bottom: 20px;
+  width: 300px;
+  margin-bottom: 30px;
+  animation: float 4s ease-in-out infinite;
 }
 
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* LIGNE PLUS HAUTE */
 .line {
-  width: 80%;
+  width: 70%;
   height: 2px;
-  margin: 20px auto;
+  margin: 40px auto 10px;
   background: linear-gradient(to right, #002395, white, #ED2939);
 }
 
+/* TEXTE */
 .subtitle {
-  letter-spacing: 4px;
-  font-size: 12px;
+  letter-spacing: 5px;
+  font-size: 11px;
   color: #aaa;
+  margin-top: 15px;
 }
 
 .text {
   max-width: 600px;
-  margin: 40px auto;
+  margin: 60px auto;
   font-size: 16px;
-  color: #ccc;
+  color: #bbb;
   font-style: italic;
+  line-height: 1.7;
 }
 
-.catalogue-box {
-  border: 1px solid #444;
-  padding: 30px 20px;
-  max-width: 600px;
-  margin: 40px auto;
-}
-
-.btn {
+/* BOUTON CATALOGUE PREMIUM */
+.catalogue-btn {
   display: inline-block;
-  padding: 15px 30px;
-  border: 1px solid #fff;
+  margin-top: 30px;
+  padding: 14px 28px;
+  border: 1px solid #888;
   color: #fff;
   text-decoration: none;
   letter-spacing: 2px;
-  margin-top: 15px;
+  font-size: 13px;
+  transition: all 0.3s ease;
 }
 
-.btn:hover {
-  background: #fff;
-  color: #000;
+.catalogue-btn:hover {
+  border-color: #fff;
 }
 
+/* ACTIONS DISCRÈTES */
 .actions {
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
-.whatsapp {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 20px;
-  border: 1px solid #25D366;
-  color: #25D366;
+.actions a {
+  margin: 0 15px;
+  font-size: 13px;
+  color: #aaa;
   text-decoration: none;
-  font-size: 14px;
+  letter-spacing: 1px;
 }
 
-.maps {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 20px;
-  border: 1px solid #fff;
+.actions a:hover {
   color: #fff;
-  text-decoration: none;
-  font-size: 14px;
 }
 
 footer {
-  margin-top: 50px;
-  color: #666;
-  font-size: 12px;
+  margin-top: 60px;
+  font-size: 11px;
+  color: #555;
 }
-</style>
 
+</style>
 </head>
 
 <body>
@@ -118,31 +119,17 @@ CHARCUTERIE ARTISANALE HALAL • TRAITEUR • ÉPICERIE FINE
 </div>
 
 <div class="text">
-Chez Maison Rameaux, notre charcuterie est produite artisanalement, dans le respect du halal.
-
-Nos recettes sont élaborées par nos soins, à partir de viandes sélectionnées et d’un fumage naturel au bois.
-
-Inspirés par le terroir français, nos racines et nos voyages,  nous proposons également des créations uniques, comme notre charcuterie de dromadaire et bien d’autres,  exclusive à Maison Rameaux.
-
-Installés à Marrakech, nous offrons une expérience gustative sincère et authentique, à partager.
+Chez Maison Rameaux, chaque produit est sélectionné avec exigence.  
+Une maison dédiée à l’artisanat, au goût et à l’authenticité.
 </div>
 
-<div class="catalogue-box">
-  <h2>Catalogue Maison Rameaux</h2>
-
-  <a href="catalogue.pdf" class="btn" target="_blank">
-    OUVRIR LE CATALOGUE
-  </a>
-</div>
+<a href="catalogue.pdf" class="catalogue-btn" target="_blank">
+VOIR LE CATALOGUE
+</a>
 
 <div class="actions">
-  <a href="https://wa.me/212645994082" class="whatsapp">
-    WhatsApp
-  </a>
-
-  <a href="https://maps.app.goo.gl/RcS94c3hXTR8XFfD9?g_st=ic" class="maps">
-    Itinéraire
-  </a>
+  <a href="https://wa.me/212645994082">WhatsApp</a>
+  <a href="https://maps.google.com?q=nr%201252,%20Maison%20Rameaux,%20Lot%20maatallah,%20Marrakech%2040160&ftid=0xdafe97128b60e4b:0xb35b6976cce7d0f5&entry=gps&shh=CAE&lucs=,94297699,94284502,94231188,94280568,47071704,94218641,94282134,94286869&g_st=ic">Itinéraire</a>
 </div>
 
 <footer>
