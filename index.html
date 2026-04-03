@@ -22,61 +22,59 @@ body {
 }
 
 .container {
-  padding: 80px 20px;
+  padding: 90px 20px;
 }
 
-/* LOGO FLOTTANT */
+/* LOGO LUXE */
 .logo {
   width: 300px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   animation: float 6s ease-in-out infinite;
-  filter: drop-shadow(0 10px 20px rgba(255,255,255,0.05));}
+  filter: drop-shadow(0 10px 25px rgba(255,255,255,0.05));
 }
 
 @keyframes float {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-6px); }
   100% { transform: translateY(0px); }
 }
 
-/* LIGNE PLUS HAUTE */
+/* LIGNE TRICOLORE FIX */
+.line {
+  width: 60%;
+  height: 1px;
+  margin: 40px auto 20px;
+  background: linear-gradient(to right, #002395, white, #ED2939);
+  opacity: 0.8;
+}
 
-.logo {
-  width: 300px;
-  margin-bottom: 40px;
-  animation: float 6s ease-in-out infinite;
-  filter: drop-shadow(0 10px 20px rgba(255,255,255,0.05));
+/* TITRE */
+.subtitle {
+  letter-spacing: 6px;
+  font-size: 11px;
+  color: #999;
 }
 
 /* TEXTE */
-.subtitle {
-  letter-spacing: 5px;
-  font-size: 11px;
-  color: #aaa;
-  margin-top: 15px;
-}
-
 .text {
   max-width: 600px;
   margin: 60px auto;
   font-size: 15px;
   color: #aaa;
-  letter-spacing: 0.5px;
   font-style: italic;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
-/* BOUTON CATALOGUE PREMIUM */
+/* BOUTON CATALOGUE */
 .catalogue-btn {
   display: inline-block;
-  margin-top: 30px;
-  padding: 14px 28px;
+  margin-top: 20px;
+  padding: 14px 30px;
   border: 1px solid #666;
-  background: transparent;
   color: #fff;
   text-decoration: none;
   letter-spacing: 2px;
-  font-size: 13px;
+  font-size: 12px;
   transition: all 0.3s ease;
 }
 
@@ -84,15 +82,35 @@ body {
   border-color: #fff;
 }
 
-/* ACTIONS DISCRÈTES */
+/* PRODUITS PHARES */
+.products {
+  margin-top: 80px;
+}
+
+.products h2 {
+  font-size: 16px;
+  letter-spacing: 4px;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #888;
+  font-size: 14px;
+}
+
+/* ACTIONS */
 .actions {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 .actions a {
   margin: 0 15px;
   font-size: 12px;
-  color: #888;
+  color: #777;
   text-decoration: none;
   letter-spacing: 2px;
 }
@@ -102,7 +120,7 @@ body {
 }
 
 footer {
-  margin-top: 60px;
+  margin-top: 70px;
   font-size: 11px;
   color: #555;
 }
@@ -131,9 +149,21 @@ Une maison dédiée à l’artisanat, au goût et à l’authenticité.
 VOIR LE CATALOGUE
 </a>
 
+<!-- PRODUITS PHARES -->
+<div class="products">
+  <h2>PRODUITS PHARES</h2>
+
+  <div class="product-list">
+    <div>• Mortadelle artisanale pistache</div>
+    <div>• Poulet fumé maison</div>
+    <div>• Plateaux apéritifs</div>
+    <div>• Bacon de bœuf artisanal</div>
+  </div>
+</div>
+
 <div class="actions">
-  <a href="https://wa.me/212645994082">WhatsApp</a>
-  <a href="https://maps.google.com?q=nr%201252,%20Maison%20Rameaux,%20Lot%20maatallah,%20Marrakech%2040160&ftid=0xdafe97128b60e4b:0xb35b6976cce7d0f5&entry=gps&shh=CAE&lucs=,94297699,94284502,94231188,94280568,47071704,94218641,94282134,94286869&g_st=ic">Itinéraire</a>
+  <a href="https://wa.me/212645994082">INFOS & COMMANDE</a>
+  <a href="https://maps.google.com?q=nr%201252,%20Maison%20Rameaux,%20Lot%20maatallah,%20Marrakech%2040160">ITINÉRAIRE</a>
 </div>
 
 <footer>
