@@ -100,7 +100,11 @@ body {
   letter-spacing: 2px;
   font-size: 12px;
 }
-
+<div class="carousel">
+  <img src="photo1.jpg" class="active">
+  <img src="photo2.jpg">
+  <img src="photo3.jpg">
+</div>
 /* PRODUITS */
 .products {
   margin-top: 60px;
@@ -189,6 +193,37 @@ Chez Maison Rameaux, chaque produit est sélectionné avec exigence.
   </div>
 </div>
 
+  <div class="carousel">
+  <img src="photo1.jpg" class="active">
+  <img src="photo2.jpg">
+  <img src="photo3.jpg">
+</div>
+  .carousel {
+  margin: 40px auto;
+  max-width: 400px;
+  position: relative;
+}
+
+.carousel img {
+  width: 100%;
+  border-radius: 6px;
+  display: none;
+}
+
+.carousel img.active {
+  display: block;
+}
+  <script>
+let index = 0;
+const images = document.querySelectorAll(".carousel img");
+
+setInterval(() => {
+  images[index].classList.remove("active");
+  index = (index + 1) % images.length;
+  images[index].classList.add("active");
+}, 3000);
+</script>
+  
 <!-- PRODUITS -->
 <div class="products">
   <div class="product-list">
@@ -208,6 +243,8 @@ Chez Maison Rameaux, chaque produit est sélectionné avec exigence.
   data-fr="NOTRE BOUTIQUE"
   data-en="OUR STORE">NOTRE BOUTIQUE</a>
 </div>
+
+  <a href="www.instagram.com/maison_rameaux">NOS RÉSEAUX</a>
 
 <!-- INFOS -->
 <div class="info-box"
