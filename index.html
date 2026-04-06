@@ -13,15 +13,9 @@ body {
   color: #f5f5f5;
   font-family: "Georgia", serif;
   text-align: center;
-  animation: fadeIn 1.5s ease;
 }
 
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-/* SWITCH LANGUE */
+/* SWITCH */
 .lang-switch {
   position: absolute;
   top: 15px;
@@ -34,53 +28,55 @@ body {
   color: #aaa;
   padding: 5px 10px;
   margin-left: 5px;
-  cursor: pointer;
 }
 
+/* CONTAINER */
 .container {
-  padding: 40px 20px 60px;
+  padding: 20px 20px 60px;
 }
 
 /* LOGO */
 .logo {
   width: 300px;
-  margin-bottom: 15px;
-  animation: float 6s ease-in-out infinite;
-  filter: drop-shadow(0 10px 25px rgba(255,255,255,0.05));
+  margin-bottom: 5px;
 }
 
 /* LIGNE */
 .line {
   width: 60%;
   height: 1px;
-  margin: 15px auto 15px;
+  margin: 5px auto 15px;
   background: linear-gradient(to right, #002395, white, #ED2939);
-  opacity: 0.8;
 }
 
-/* TITRE */
+/* TEXTES */
 .subtitle {
   letter-spacing: 6px;
   font-size: 11px;
   color: #999;
 }
 
-/* TEXTE */
 .text {
   max-width: 600px;
-  margin: 50px auto;
+  margin: 40px auto;
   font-size: 15px;
   color: #aaa;
   font-style: italic;
-  line-height: 1.8;
 }
 
-/* CATALOGUE PREMIUM */
+/* CATALOGUE */
 .catalogue-box {
   border: 1px solid #444;
   padding: 25px;
   max-width: 500px;
-  margin: 40px auto;
+  margin: 30px auto;
+}
+
+.catalogue-btn {
+  padding: 12px 25px;
+  border: 1px solid #888;
+  color: #fff;
+  text-decoration: none;
 }
 
 .catalogue-note {
@@ -89,55 +85,51 @@ body {
   margin-top: 10px;
 }
 
-/* BOUTON */
-.catalogue-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 25px;
-  border: 1px solid #888;
-  color: #fff;
-  text-decoration: none;
-  letter-spacing: 2px;
-  font-size: 12px;
+/* CARROUSEL */
+.carousel {
+  margin: 40px auto;
+  max-width: 400px;
 }
-<div class="carousel">
-  <img src="photo1.jpg" class="active">
-  <img src="photo2.jpg">
-  <img src="photo3.jpg">
-</div>
+
+.carousel img {
+  width: 100%;
+  border-radius: 6px;
+  display: none;
+}
+
+.carousel img.active {
+  display: block;
+}
+
 /* PRODUITS */
 .products {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .product-list {
   color: #888;
-  font-size: 14px;
 }
 
 /* ACTIONS */
 .actions {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .actions a {
   margin: 0 15px;
-  font-size: 12px;
   color: #777;
   text-decoration: none;
-  letter-spacing: 2px;
 }
 
 /* INFOS */
 .info-box {
-  margin-top: 40px;
+  margin-top: 30px;
   font-size: 13px;
   color: #888;
 }
 
 footer {
-  margin-top: 60px;
-  font-size: 11px;
+  margin-top: 40px;
   color: #555;
 }
 
@@ -156,8 +148,8 @@ function setLang(lang) {
 <body>
 
 <div class="lang-switch">
-  <button onclick="setLang('fr')">FR</button>
-  <button onclick="setLang('en')">EN</button>
+<button onclick="setLang('fr')">FR</button>
+<button onclick="setLang('en')">EN</button>
 </div>
 
 <div class="container">
@@ -166,90 +158,47 @@ function setLang(lang) {
 
 <div class="line"></div>
 
-<div class="subtitle"
-data-fr="CHARCUTERIE ARTISANALE HALAL • TRAITEUR • ÉPICERIE FINE"
-data-en="HALAL ARTISAN CHARCUTERIE • CATERING • FINE GROCERY">
+<div class="subtitle">
 CHARCUTERIE ARTISANALE HALAL • TRAITEUR • ÉPICERIE FINE
 </div>
 
-<div class="text"
-data-fr="Chez Maison Rameaux, chaque produit est sélectionné avec exigence. Une maison dédiée à l’artisanat, au goût et à l’authenticité."
-data-en="At Maison Rameaux, each product is carefully selected. A house dedicated to craftsmanship, taste and authenticity.">
+<div class="text">
 Chez Maison Rameaux, chaque produit est sélectionné avec exigence.
 </div>
 
 <!-- CATALOGUE -->
 <div class="catalogue-box">
-  <a href="catalogue.pdf" class="catalogue-btn" target="_blank"
-  data-fr="VOIR LE CATALOGUE"
-  data-en="VIEW CATALOGUE">
-  VOIR LE CATALOGUE
-  </a>
-
-  <div class="catalogue-note"
-  data-fr="Mis à jour régulièrement avec nos nouveautés"
-  data-en="Regularly updated with new products">
-  Mis à jour régulièrement avec nos nouveautés
-  </div>
+<a href="catalogue.pdf" class="catalogue-btn">VOIR LE CATALOGUE</a>
+<div class="catalogue-note">
+Mis à jour régulièrement avec nos nouveautés
+</div>
 </div>
 
-  <div class="carousel">
-  <img src="photo1.jpg" class="active">
-  <img src="photo2.jpg">
-  <img src="photo3.jpg">
+<!-- CARROUSEL -->
+<div class="carousel">
+<img src="photo1.jpg" class="active">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
 </div>
-  .carousel {
-  margin: 40px auto;
-  max-width: 400px;
-  position: relative;
-}
 
-.carousel img {
-  width: 100%;
-  border-radius: 6px;
-  display: none;
-}
-
-.carousel img.active {
-  display: block;
-}
-  <script>
-let index = 0;
-const images = document.querySelectorAll(".carousel img");
-
-setInterval(() => {
-  images[index].classList.remove("active");
-  index = (index + 1) % images.length;
-  images[index].classList.add("active");
-}, 3000);
-</script>
-  
 <!-- PRODUITS -->
 <div class="products">
-  <div class="product-list">
-    <div data-fr="Plateaux de charcuterie" data-en="Charcuterie platters">Plateaux de charcuterie</div>
-    <div data-fr="Poulet fumé" data-en="Smoked chicken">Poulet fumé</div>
-    <div data-fr="Charcuterie de dromadaire" data-en="Camel charcuterie">Charcuterie de dromadaire</div>
-  </div>
+<div class="product-list">
+<div>Plateaux de charcuterie</div>
+<div>Poulet fumé</div>
+<div>Charcuterie de dromadaire</div>
+</div>
 </div>
 
 <!-- ACTIONS -->
 <div class="actions">
-  <a href="https://wa.me/212645994082"
-  data-fr="INFOS & COMMANDE"
-  data-en="INFO & ORDER">INFOS & COMMANDE</a>
-
-  <a href="https://maps.google.com?q=nr%201252,%20Maison%20Rameaux,%20Lot%20maatallah,%20Marrakech%2040160"
-  data-fr="NOTRE BOUTIQUE"
-  data-en="OUR STORE">NOTRE BOUTIQUE</a>
+<a href="https://wa.me/212645994082">INFOS & COMMANDE</a>
+<a href="https://maps.google.com?q=nr%201252,%20Maison%20Rameaux">NOTRE BOUTIQUE</a>
+<a href="https://www.instagram.com/maison_rameaux">NOS RÉSEAUX</a>
 </div>
 
-  <a href="www.instagram.com/maison_rameaux">NOS RÉSEAUX</a>
-
 <!-- INFOS -->
-<div class="info-box"
-data-fr="Ouvert tous les jours • Livraison disponible"
-data-en="Open daily • Delivery available">
+<div class="info-box">
 Ouvert tous les jours • Livraison disponible
 </div>
 
@@ -258,6 +207,17 @@ Ouvert tous les jours • Livraison disponible
 </footer>
 
 </div>
+
+<script>
+let index = 0;
+const images = document.querySelectorAll(".carousel img");
+
+setInterval(() => {
+images[index].classList.remove("active");
+index = (index + 1) % images.length;
+images[index].classList.add("active");
+}, 3000);
+</script>
 
 </body>
 </html>
