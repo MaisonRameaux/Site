@@ -11,11 +11,11 @@ body {
   margin: 0;
   background: #000;
   color: #f5f5f5;
-  font-family: "Georgia", serif;
+  font-family: "Times New Roman", serif;
   text-align: center;
 }
 
-/* SWITCH */
+/* LANGUE */
 .lang-switch {
   position: absolute;
   top: 15px;
@@ -30,7 +30,7 @@ body {
   margin-left: 5px;
 }
 
-/* CONTAINER */
+/* STRUCTURE */
 .container {
   padding: 20px 20px 60px;
 }
@@ -51,7 +51,7 @@ body {
 
 /* TEXTES */
 .subtitle {
-  letter-spacing: 6px;
+  letter-spacing: 8px;
   font-size: 11px;
   color: #999;
 }
@@ -62,70 +62,127 @@ body {
   font-size: 15px;
   color: #aaa;
   font-style: italic;
+  line-height: 2;
 }
 
 /* CATALOGUE */
 .catalogue-box {
-  border: 1px solid #444;
-  padding: 25px;
+  border: 1px solid #333;
+  padding: 35px 20px;
   max-width: 500px;
-  margin: 30px auto;
+  margin: 40px auto;
 }
 
 .catalogue-btn {
-  padding: 12px 25px;
-  border: 1px solid #888;
-  color: #fff;
+  display: inline-block;
+  padding: 14px 30px;
+  border: 1px solid #aaa;
   text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.catalogue-btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: -100%;
+  background: white;
+  transition: 0.4s;
+}
+
+.catalogue-btn:hover::after {
+  left: 0;
 }
 
 .catalogue-note {
+  margin-top: 18px;
   font-size: 12px;
   color: #777;
-  margin-top: 10px;
+  line-height: 1.6;
 }
 
-/* CARROUSEL */
+/* CARROUSEL LUXE */
 .carousel {
-  margin: 40px auto;
-  max-width: 400px;
+  margin: 50px auto;
+  max-width: 420px;
+  position: relative;
+  height: 260px;
 }
 
 .carousel img {
   width: 100%;
   border-radius: 6px;
-  display: none;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1.5s ease;
 }
 
 .carousel img.active {
-  display: block;
+  opacity: 1;
 }
 
 /* PRODUITS */
 .products {
-  margin-top: 40px;
+  margin-top: 60px;
+}
+
+.products-title {
+  margin-bottom: 25px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  color: #aaa;
 }
 
 .product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   color: #888;
+  line-height: 1.6;
 }
 
 /* ACTIONS */
 .actions {
-  margin-top: 40px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .actions a {
-  margin: 0 15px;
-  color: #777;
+  font-size: 12px;
+  color: #888;
   text-decoration: none;
+  letter-spacing: 2px;
+  padding: 10px 0;
+  border-top: 1px solid #222;
+}
+
+.actions a:hover {
+  color: #fff;
 }
 
 /* INFOS */
 .info-box {
-  margin-top: 30px;
+  margin-top: 40px;
   font-size: 13px;
   color: #888;
+}
+
+/* ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 footer {
@@ -158,31 +215,33 @@ function setLang(lang) {
 
 <div class="line"></div>
 
-<div class="subtitle">
-CHARCUTERIE ARTISANALE HALAL • TRAITEUR • ÉPICERIE FINE
+<div class="subtitle"
+data-fr="CHARCUTERIE ARTISANALE HALAL TRAITEUR • ÉPICERIE FINE"
+data-en="HALAL ARTISAN CHARCUTERIE TRAITEUR • FINE GROCERY">
+CHARCUTERIE ARTISANALE HALAL TRAITEUR • ÉPICERIE FINE
 </div>
 
-<div class="text">
+<div class="text reveal"
+data-fr="Chez Maison Rameaux, chaque produit est sélectionné avec exigence."
+data-en="At Maison Rameaux, each product is carefully selected.">
 Chez Maison Rameaux, chaque produit est sélectionné avec exigence.
 </div>
 
-<!-- CATALOGUE -->
-<div class="catalogue-box">
+<div class="catalogue-box reveal">
 <a href="catalogue.pdf" class="catalogue-btn">VOIR LE CATALOGUE</a>
 <div class="catalogue-note">
-Mis à jour régulièrement avec nos nouveautés
+Mis à jour régulièrement<br>avec nos nouveautés
 </div>
 </div>
 
-<!-- CARROUSEL -->
-<div class="carousel">
+<div class="carousel reveal">
 <img src="photo1.jpg" class="active">
 <img src="photo2.jpg">
 <img src="photo3.jpg">
 </div>
 
-<!-- PRODUITS -->
-<div class="products">
+<div class="products reveal">
+<h2 class="products-title">PRODUITS PHARES</h2>
 <div class="product-list">
 <div>Plateaux de charcuterie</div>
 <div>Poulet fumé</div>
@@ -190,15 +249,13 @@ Mis à jour régulièrement avec nos nouveautés
 </div>
 </div>
 
-<!-- ACTIONS -->
-<div class="actions">
+<div class="actions reveal">
 <a href="https://wa.me/212645994082">INFOS & COMMANDE</a>
 <a href="https://maps.google.com?q=nr%201252,%20Maison%20Rameaux">NOTRE BOUTIQUE</a>
 <a href="https://www.instagram.com/maison_rameaux">NOS RÉSEAUX</a>
 </div>
 
-<!-- INFOS -->
-<div class="info-box">
+<div class="info-box reveal">
 Ouvert tous les jours • Livraison disponible
 </div>
 
@@ -216,7 +273,17 @@ setInterval(() => {
 images[index].classList.remove("active");
 index = (index + 1) % images.length;
 images[index].classList.add("active");
-}, 3000);
+}, 4000);
+
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+      el.classList.add("visible");
+    }
+  });
+});
 </script>
 
 </body>
