@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maison Rameaux</title>
 
 <style>
 
@@ -27,18 +26,17 @@ body {
   border: 1px solid #555;
   color: #aaa;
   padding: 5px 10px;
-  margin-left: 5px;
 }
 
 /* STRUCTURE */
 .container {
-  padding: 20px 20px 60px;
+  padding: 20px;
 }
 
 /* LOGO */
 .logo {
-  width: 300px;
-  margin-bottom: 5px;
+  width: 260px;
+  margin-bottom: 10px;
 }
 
 /* LIGNE */
@@ -49,145 +47,97 @@ body {
   background: linear-gradient(to right, #002395, white, #ED2939);
 }
 
-/* TEXTES */
+/* TITRES */
 .subtitle {
-  letter-spacing: 8px;
   font-size: 11px;
-  color: #999;
+  letter-spacing: 6px;
+  color: #aaa;
+  margin-bottom: 20px;
 }
 
+/* TEXTE */
 .text {
-  max-width: 600px;
   margin: 40px auto;
-  font-size: 15px;
+  max-width: 500px;
   color: #aaa;
   font-style: italic;
-  line-height: 2;
 }
 
 /* CATALOGUE */
 .catalogue-box {
   border: 1px solid #333;
-  padding: 35px 20px;
-  max-width: 500px;
-  margin: 40px auto;
+  padding: 30px;
+  margin: 30px;
 }
 
 .catalogue-btn {
-  display: inline-block;
-  padding: 14px 30px;
-  border: 1px solid #aaa;
+  border: 1px solid white;
+  padding: 12px 25px;
   text-decoration: none;
   color: white;
   letter-spacing: 2px;
-  position: relative;
-}
-
-.catalogue-btn::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  bottom: 0;
-  left: -100%;
-  background: white;
-  transition: 0.4s;
-}
-
-.catalogue-btn:hover::after {
-  left: 0;
 }
 
 .catalogue-note {
-  margin-top: 18px;
+  margin-top: 15px;
   font-size: 12px;
   color: #777;
-  line-height: 1.6;
 }
 
-/* CARROUSEL LUXE */
+/* CARROUSEL FIX */
 .carousel {
-  margin: 50px auto;
-  max-width: 420px;
+  margin: 30px auto;
+  max-width: 350px;
   position: relative;
-  height: 260px;
+  height: 220px;
 }
 
 .carousel img {
-  width: 100%;
-  border-radius: 6px;
   position: absolute;
+  width: 100%;
   opacity: 0;
-  transition: opacity 1.5s ease;
+  transition: opacity 1s;
 }
 
 .carousel img.active {
   opacity: 1;
 }
 
-/* PRODUITS */
+/* SIGNATURES */
 .products {
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 .products-title {
-  margin-bottom: 25px;
   letter-spacing: 4px;
-  font-size: 14px;
+  font-size: 13px;
   color: #aaa;
+  margin-bottom: 20px;
 }
 
 .product-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   color: #888;
-  line-height: 1.6;
 }
 
 /* ACTIONS */
 .actions {
-  margin-top: 60px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 15px;
 }
 
 .actions a {
-  font-size: 12px;
   color: #888;
   text-decoration: none;
   letter-spacing: 2px;
-  padding: 10px 0;
-  border-top: 1px solid #222;
-}
-
-.actions a:hover {
-  color: #fff;
 }
 
 /* INFOS */
 .info-box {
-  margin-top: 40px;
+  margin-top: 30px;
   font-size: 13px;
   color: #888;
-}
-
-/* ANIMATION */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 1s;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-footer {
-  margin-top: 40px;
-  color: #555;
 }
 
 </style>
@@ -216,52 +166,78 @@ function setLang(lang) {
 <div class="line"></div>
 
 <div class="subtitle"
-data-fr="CHARCUTERIE ARTISANALE HALAL TRAITEUR • ÉPICERIE FINE"
-data-en="HALAL ARTISAN CHARCUTERIE TRAITEUR • FINE GROCERY">
-CHARCUTERIE ARTISANALE HALAL TRAITEUR • ÉPICERIE FINE
+data-fr="CHARCUTERIE ARTISANALE HALAL"
+data-en="HALAL ARTISAN CHARCUTERIE">
+CHARCUTERIE ARTISANALE HALAL
 </div>
 
-<div class="text reveal"
+<div class="subtitle"
+data-fr="TRAITEUR • ÉPICERIE FINE"
+data-en="CATERING • FINE GROCERY">
+TRAITEUR • ÉPICERIE FINE
+</div>
+
+<div class="text"
 data-fr="Chez Maison Rameaux, chaque produit est sélectionné avec exigence."
 data-en="At Maison Rameaux, each product is carefully selected.">
 Chez Maison Rameaux, chaque produit est sélectionné avec exigence.
 </div>
 
-<div class="catalogue-box reveal">
-<a href="catalogue.pdf" class="catalogue-btn">VOIR LE CATALOGUE</a>
-<div class="catalogue-note">
-Mis à jour régulièrement<br>avec nos nouveautés
+<!-- CATALOGUE -->
+<div class="catalogue-box">
+<a href="catalogue.pdf" class="catalogue-btn"
+data-fr="VOIR LE CATALOGUE"
+data-en="VIEW CATALOGUE">VOIR LE CATALOGUE</a>
+
+<div class="catalogue-note"
+data-fr="Mis à jour régulièrement avec nos nouveautés"
+data-en="Regularly updated with new products">
+Mis à jour régulièrement avec nos nouveautés
 </div>
 </div>
 
-<div class="carousel reveal">
+<!-- CARROUSEL -->
+<div class="carousel">
 <img src="photo1.jpg" class="active">
 <img src="photo2.jpg">
 <img src="photo3.jpg">
 </div>
 
-<div class="products reveal">
-<h2 class="products-title">PRODUITS PHARES</h2>
+<!-- SIGNATURES -->
+<div class="products">
+<h2 class="products-title"
+data-fr="NOS SIGNATURES"
+data-en="OUR SIGNATURES">
+NOS SIGNATURES
+</h2>
+
 <div class="product-list">
-<div>Plateaux de charcuterie</div>
-<div>Poulet fumé</div>
-<div>Charcuterie de dromadaire</div>
+<div data-fr="Plateaux de charcuterie" data-en="Charcuterie platters">Plateaux de charcuterie</div>
+<div data-fr="Poulet fumé" data-en="Smoked chicken">Poulet fumé</div>
+<div data-fr="Charcuterie de dromadaire" data-en="Camel charcuterie">Charcuterie de dromadaire</div>
 </div>
 </div>
 
-<div class="actions reveal">
-<a href="https://wa.me/212645994082">INFOS & COMMANDE</a>
-<a href="https://maps.google.com?q=nr%201252,%20Maison%20Rameaux">NOTRE BOUTIQUE</a>
-<a href="https://www.instagram.com/maison_rameaux">NOS RÉSEAUX</a>
+<!-- ACTIONS -->
+<div class="actions">
+<a href="https://wa.me/212645994082"
+data-fr="INFOS & COMMANDE"
+data-en="INFO & ORDER">INFOS & COMMANDE</a>
+
+<a href="https://maps.google.com?q=nr%201252,%20Maison%20Rameaux"
+data-fr="NOTRE BOUTIQUE"
+data-en="OUR STORE">NOTRE BOUTIQUE</a>
+
+<a href="https://www.instagram.com/maison_rameaux"
+data-fr="NOS RÉSEAUX"
+data-en="OUR SOCIALS">NOS RÉSEAUX</a>
 </div>
 
-<div class="info-box reveal">
+<div class="info-box"
+data-fr="Ouvert tous les jours • Livraison disponible"
+data-en="Open daily • Delivery available">
 Ouvert tous les jours • Livraison disponible
 </div>
-
-<footer>
-© Maison Rameaux
-</footer>
 
 </div>
 
@@ -274,16 +250,6 @@ images[index].classList.remove("active");
 index = (index + 1) % images.length;
 images[index].classList.add("active");
 }, 4000);
-
-const reveals = document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll", () => {
-  reveals.forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 50) {
-      el.classList.add("visible");
-    }
-  });
-});
 </script>
 
 </body>
