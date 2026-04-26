@@ -4,520 +4,372 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maison Rameaux</title>
+<title>Maison Rameaux — Charcuterie artisanale halal, Marrakech</title>
+<meta name="description" content="Maison Rameaux — Charcuterie artisanale halal à Marrakech. Fumage au bois, recettes maison, créations exclusives dont la charcuterie de dromadaire. Traiteur & épicerie fine.">
+<link rel="icon" type="image/png" href="Logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
-
-/* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-margin: 0;
 background: radial-gradient(circle at top, #111, #000 70%);
 color: #f5f5f5;
-font-family: “Cormorant Garamond”, “Times New Roman”, serif;
+font-family: “Cormorant Garamond”, serif;
 text-align: center;
 }
 
-/* ── ANIMATION ENTREE ── */
 @keyframes fadeUp {
-from { opacity: 0; transform: translateY(20px); }
+from { opacity: 0; transform: translateY(18px); }
 to   { opacity: 1; transform: translateY(0); }
 }
-
 .fade-1 { animation: fadeUp 0.8s ease 0.1s both; }
 .fade-2 { animation: fadeUp 0.8s ease 0.3s both; }
 .fade-3 { animation: fadeUp 0.8s ease 0.5s both; }
 .fade-4 { animation: fadeUp 0.8s ease 0.7s both; }
-.fade-5 { animation: fadeUp 0.8s ease 0.9s both; }
-.fade-6 { animation: fadeUp 0.8s ease 1.1s both; }
-.fade-7 { animation: fadeUp 0.8s ease 1.3s both; }
 
-/* ── SCROLL REVEAL ── */
-.reveal {
-opacity: 0;
-transform: translateY(22px);
-transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.reveal.visible {
-opacity: 1;
-transform: translateY(0);
-}
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ── LANGUE ── */
-.lang-switch {
-position: fixed;
-top: 15px;
-right: 20px;
-z-index: 999;
-}
+/* LANGUE */
+.lang-switch { position: fixed; top: 15px; right: 20px; z-index: 999; display: flex; gap: 6px; }
 .lang-switch button {
-background: none;
-border: 1px solid #444;
-color: #aaa;
-padding: 5px 10px;
-cursor: pointer;
-font-family: inherit;
+background: none; border: 1px solid #333; color: #666;
+padding: 5px 10px; cursor: pointer;
+font-family: ‘Montserrat’, sans-serif; font-size: 10px; letter-spacing: 1px;
+transition: all 0.2s;
 }
 .lang-switch button:hover { border-color: #c6a66b; color: #fff; }
 
-/* ── STRUCTURE ── */
-.container {
-padding: 30px 20px 80px;
-}
+/* CONTAINER */
+.container { padding: 30px 20px 80px; max-width: 640px; margin: 0 auto; }
 
-/* ── LOGO — flotte sur fond noir, pas de cadre ── */
-.logo {
-width: 240px;
-margin-bottom: 10px;
-display: block;
-margin-left: auto;
-margin-right: auto;
-/* pas de border-radius, pas de background */
-}
+/* LOGO */
+.logo { width: 220px; display: block; margin: 0 auto 12px; }
 
-/* ── LIGNE TRICOLORE ── */
-.line {
-width: 60%;
-height: 1px;
-margin: 5px auto 20px;
-background: linear-gradient(to right, #002395, white, #ED2939);
-}
+/* LIGNE TRICOLORE */
+.line { width: 55%; height: 1px; margin: 0 auto 22px; background: linear-gradient(to right, #002395, white, #ED2939); }
 
-/* ── TITRES ── */
-.subtitle {
-font-family: ‘Montserrat’, sans-serif;
-font-size: 11px;
-letter-spacing: 6px;
-color: #bbb;
-}
+/* SOUS-TITRES */
+.subtitle { font-family: ‘Montserrat’, sans-serif; font-size: 10px; letter-spacing: 6px; color: #bbb; margin-bottom: 3px; }
 
-/* ── TEXTE ── */
+/* SÉPARATEUR */
+.sep { width: 1px; height: 50px; background: linear-gradient(to bottom, transparent, #2a2a2a, transparent); margin: 40px auto; }
+
+/* TEXTE PRÉSENTATION */
 .text {
-margin: 50px auto;
-max-width: 520px;
-color: #aaa;
-font-style: italic;
-line-height: 1.9;
-white-space: pre-line;
-}
-
-/* ── CATALOGUE ── */
-.catalogue-section {
-margin: 80px 20px;
+max-width: 480px; margin: 0 auto;
 text-align: left;
+font-size: 1.05rem; line-height: 1.95;
 }
-.catalogue-title {
-font-family: ‘Montserrat’, sans-serif;
-letter-spacing: 4px;
-font-size: 13px;
-color: #c6a66b;
-margin-bottom: 25px;
-}
-.catalogue-card {
-border: 1px solid #1a1a1a;
-padding: 35px;
-background: rgba(255,255,255,0.02);
-}
-.catalogue-card h3 {
-margin: 0 0 12px;
-font-weight: normal;
-font-size: 20px;
-}
-.catalogue-card p {
-color: #aaa;
-font-size: 14px;
-line-height: 1.6;
-}
-.catalogue-btn {
-display: inline-block;
-margin-top: 25px;
-padding: 14px 28px;
-border: 1px solid #555;
-text-decoration: none;
-color: white;
-letter-spacing: 2px;
-transition: 0.3s;
-font-family: ‘Montserrat’, sans-serif;
-font-size: 11px;
-}
-.catalogue-btn:hover {
-border-color: #c6a66b;
-color: #c6a66b;
-}
-.catalogue-update {
-margin-top: 20px;
-font-size: 12px;
-color: #777;
+.text .accroche {
 font-style: italic;
+font-size: 1.25rem; color: #e0d8cc;
+letter-spacing: 0.5px;
+margin-bottom: 1.6em; line-height: 1.65;
+}
+.text .bloc { color: #aaa; font-style: italic; margin-bottom: 1.1em; }
+.text .bloc:last-child { margin-bottom: 0; }
+
+/* SECTION LABEL */
+.section-label {
+font-family: ‘Montserrat’, sans-serif;
+font-size: 11px; letter-spacing: 5px; color: #c6a66b;
+margin-bottom: 28px; text-align: center;
 }
 
-/* ── CARROUSEL ── */
-.carousel {
-margin: 60px auto;
-max-width: 420px;
-width: 90%;
-height: 260px;
-position: relative;
-overflow: hidden;
-border-radius: 6px;
+/* CATALOGUE */
+.catalogue-section { margin: 60px 0; text-align: left; }
+.catalogue-card { border: 1px solid #1a1a1a; padding: 30px; background: rgba(255,255,255,0.02); }
+.catalogue-card h3 { font-weight: 400; font-size: 1.2rem; margin-bottom: 10px; color: #e0d8cc; }
+.catalogue-card p { color: #777; font-size: 13px; line-height: 1.6; font-family: ‘Montserrat’, sans-serif; font-weight: 300; }
+.catalogue-btn {
+display: inline-block; margin-top: 22px; padding: 13px 26px;
+border: 1px solid #444; text-decoration: none; color: #ccc;
+letter-spacing: 2px; transition: 0.3s;
+font-family: ‘Montserrat’, sans-serif; font-size: 10px;
 }
-.carousel img {
-position: absolute;
-top: 0; left: 0;
-width: 100%; height: 100%;
-object-fit: cover;
-object-position: center;
-opacity: 0;
-transition: opacity 1.5s;
-}
+.catalogue-btn:hover { border-color: #c6a66b; color: #c6a66b; }
+.catalogue-update { margin-top: 16px; font-size: 11px; color: #555; font-style: italic; font-family: ‘Montserrat’, sans-serif; }
+
+/* CARROUSEL */
+.carousel { margin: 0 auto; width: 100%; height: 260px; position: relative; overflow: hidden; border-radius: 4px; }
+.carousel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s; }
 .carousel img.active { opacity: 1; }
 
-/* ── SIGNATURES — CARTES ── */
-.products {
-margin-top: 80px;
-}
-.products-title {
-font-family: ‘Montserrat’, sans-serif;
-letter-spacing: 5px;
-font-size: 13px;
-color: #c6a66b;
-margin-bottom: 25px;
-}
-.product-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 14px;
-max-width: 420px;
-margin: 0 auto;
-}
+/* SIGNATURES — style original */
+.products { margin-top: 60px; }
+.product-grid { max-width: 420px; margin: 0 auto; }
+
 .product-card {
 border: 1px solid #1a1a1a;
-padding: 24px 14px;
-background: rgba(255,255,255,0.02);
-transition: border-color 0.3s, transform 0.3s;
-text-align: center;
-}
-.product-card:hover {
-border-color: #c6a66b;
-transform: translateY(-3px);
-}
-.product-card:last-child:nth-child(odd) {
-grid-column: 1 / -1;
-}
-.product-icon {
-font-size: 1.8rem;
-display: block;
-margin-bottom: 10px;
-}
-.product-name {
-color: #aaa;
-font-style: italic;
-font-size: 15px;
-line-height: 1.4;
-}
-
-/* ── ACTIONS ── */
-.actions {
-margin-top: 70px;
-}
-.actions a {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 10px;
-margin: 18px auto;
-max-width: 280px;
-padding: 14px;
-border: 1px solid #222;
-color: #aaa;
-text-decoration: none;
-letter-spacing: 2px;
-transition: 0.3s;
-font-family: ‘Montserrat’, sans-serif;
-font-size: 11px;
-}
-.actions a svg { width: 15px; height: 15px; flex-shrink: 0; opacity: 0.6; }
-.actions a:hover {
-border-color: #c6a66b;
-color: #fff;
-}
-.actions a:hover svg { opacity: 1; }
-
-/* ── INFO ── */
-.info-box {
-margin-top: 40px;
-font-family: ‘Montserrat’, sans-serif;
-font-size: 13px;
-color: #888;
-}
-
-/* ── FOOTER ── */
-footer {
-margin-top: 60px;
-padding-top: 20px;
-border-top: 1px solid #1a1a1a;
-font-family: ‘Montserrat’, sans-serif;
-font-size: 10px;
-letter-spacing: 3px;
-color: #333;
-}
-
-/* ── BOUTON RETOUR EN HAUT ── */
-#backTop {
-position: fixed;
-bottom: 28px;
-right: 20px;
-z-index: 999;
-width: 42px;
-height: 42px;
-background: rgba(10,10,10,0.9);
-border: 1px solid #333;
-color: #aaa;
-display: flex;
-align-items: center;
-justify-content: center;
+border-top: none;
+background: rgba(255,255,255,0.015);
+padding: 26px 20px;
 cursor: pointer;
 text-decoration: none;
-opacity: 0;
-pointer-events: none;
-transition: all 0.3s;
+display: block;
+transition: background 0.3s, border-color 0.3s;
+position: relative;
+overflow: hidden;
+text-align: left;
 }
-#backTop.visible {
-opacity: 1;
-pointer-events: all;
+.product-card:first-child { border-top: 1px solid #1a1a1a; }
+.product-card::after {
+content: ‘’;
+position: absolute; bottom: 0; left: 0;
+width: 0; height: 1px; background: #c6a66b;
+transition: width 0.4s ease;
 }
-#backTop:hover {
-border-color: #c6a66b;
-color: #c6a66b;
-}
-#backTop svg { width: 16px; height: 16px; }
+.product-card:hover { background: rgba(198,166,107,0.04); border-color: #333; }
+.product-card:hover::after { width: 100%; }
 
+.product-name {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic; font-size: 1.2rem; color: #ccc;
+letter-spacing: 1px; transition: color 0.3s;
+margin-bottom: 4px;
+}
+.product-card:hover .product-name { color: #fff; }
+
+.product-sub {
+font-family: ‘Montserrat’, sans-serif;
+font-size: 9px; letter-spacing: 2px; color: #555;
+margin-bottom: 8px; transition: color 0.3s;
+}
+.product-card:hover .product-sub { color: #888; }
+
+.product-arrow {
+font-family: ‘Montserrat’, sans-serif;
+font-size: 9px; letter-spacing: 2px; color: #444;
+transition: color 0.3s;
+}
+.product-card:hover .product-arrow { color: #c6a66b; }
+
+/* ACTIONS */
+.actions { margin-top: 60px; display: flex; flex-direction: column; gap: 12px; }
+.actions a {
+display: flex; align-items: center; justify-content: center; gap: 10px;
+padding: 14px 20px; border: 1px solid #1a1a1a;
+color: #888; text-decoration: none; letter-spacing: 2px;
+transition: 0.3s; font-family: ‘Montserrat’, sans-serif; font-size: 10px;
+}
+.actions a svg { width: 14px; height: 14px; flex-shrink: 0; opacity: 0.5; }
+.actions a:hover { border-color: #c6a66b; color: #fff; }
+.actions a:hover svg { opacity: 1; }
+
+/* INFO */
+.info-box { margin-top: 36px; font-family: ‘Montserrat’, sans-serif; font-size: 11px; color: #666; letter-spacing: 2px; }
+
+/* FOOTER */
+footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #111; font-family: ‘Montserrat’, sans-serif; font-size: 9px; letter-spacing: 3px; color: #2a2a2a; }
+
+/* BACK TO TOP */
+#backTop {
+position: fixed; bottom: 24px; right: 20px; z-index: 999;
+width: 40px; height: 40px; background: rgba(8,8,8,0.92);
+border: 1px solid #222; color: #666;
+display: flex; align-items: center; justify-content: center;
+text-decoration: none; opacity: 0; pointer-events: none; transition: all 0.3s;
+}
+#backTop.visible { opacity: 1; pointer-events: all; }
+#backTop:hover { border-color: #c6a66b; color: #c6a66b; }
+#backTop svg { width: 14px; height: 14px; }
 </style>
+
 </head>
 <body>
-
 <div id="top"></div>
-
-<!-- LANGUE -->
 
 <div class="lang-switch">
   <button onclick="setLang('fr')">FR</button>
   <button onclick="setLang('en')">EN</button>
 </div>
 
-<!-- BOUTON RETOUR EN HAUT -->
-
 <a href="#top" id="backTop">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <polyline points="18 15 12 9 6 15"/>
-  </svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
 </a>
 
 <div class="container">
 
-  <!-- LOGO -->
-
-  <img src="logo-mr.png" class="logo fade-1" alt="Maison Rameaux">
-
-  <!-- LIGNE TRICOLORE -->
-
+  <img src="Logo.png" class="logo fade-1" alt="Maison Rameaux">
   <div class="line fade-2"></div>
+  <p class="subtitle fade-3" id="sub1">CHARCUTERIE ARTISANALE HALAL</p>
+  <p class="subtitle fade-3" id="sub2">TRAITEUR • ÉPICERIE FINE • MARRAKECH</p>
 
-  <!-- SOUS-TITRES -->
+  <div class="sep"></div>
 
-  <div class="subtitle fade-3"
-       data-fr="CHARCUTERIE ARTISANALE HALAL"
-       data-en="HALAL ARTISAN CHARCUTERIE">
-    CHARCUTERIE ARTISANALE HALAL
-  </div>
-  <div class="subtitle fade-3"
-       data-fr="TRAITEUR • ÉPICERIE FINE"
-       data-en="CATERING • FINE GROCERY">
-    TRAITEUR • ÉPICERIE FINE
-  </div>
-
-  <!-- TEXTE DE PRÉSENTATION -->
-
-  <div class="text fade-4"
-       data-fr="Chez Maison Rameaux, nous façonnons une charcuterie artisanale halal, fumée au bois et élaborée selon nos propres recettes.
-
-Puisant notre inspiration dans le terroir français, nos racines et nos voyages, nous vous proposons des créations exclusives — dont notre emblématique charcuterie de dromadaire.
-
-Une invitation à découvrir des saveurs authentiques, au cœur de Marrakech.”
-data-en=“At Maison Rameaux, we craft artisanal halal charcuterie, wood-smoked and made from our own recipes.
-
-Drawing inspiration from French terroir, our roots and our travels, we offer exclusive creations — including our emblematic camel charcuterie.
-
-An invitation to discover authentic flavours, in the heart of Marrakech.”>
-Chez Maison Rameaux, nous façonnons une charcuterie artisanale halal, fumée au bois et élaborée selon nos propres recettes.
-
-Puisant notre inspiration dans le terroir français, nos racines et nos voyages, nous vous proposons des créations exclusives — dont notre emblématique charcuterie de dromadaire.
-
-Une invitation à découvrir des saveurs authentiques, au cœur de Marrakech.
-
+  <div class="text fade-4" id="texte-bloc">
+    <p class="accroche">L'art de la charcuterie,<br>revisité dans le respect du halal.</p>
+    <p class="bloc">Chez Maison Rameaux, chaque produit est façonné à la main.<br>Fumé au bois naturel. Élaboré selon nos propres recettes.</p>
+    <p class="bloc">Inspirés du terroir français, de nos racines et de nos voyages —<br>nous créons une charcuterie artisanale d'exception,<br>au cœur de Marrakech.</p>
+    <p class="bloc">Sans conservateur artificiel.<br>100% halal.<br>Du producteur à votre table.</p>
+    <p class="bloc">Notre fierté : la <em>charcuterie de dromadaire</em>.<br>Chorizo, pastrami, saucisson sec, coppa.<br>Une création unique, exclusive à Maison Rameaux.</p>
   </div>
 
-  <!-- CATALOGUE -->
+  <div class="sep"></div>
 
-  <div class="catalogue-section reveal fade-5">
-    <div class="catalogue-title"
-         data-fr="NOTRE CATALOGUE"
-         data-en="OUR CATALOGUE">NOTRE CATALOGUE</div>
-
-```
-<div class="catalogue-card">
-  <h3 data-fr="Catalogue Maison Rameaux" data-en="Maison Rameaux Catalogue">Catalogue Maison Rameaux</h3>
-  <p data-fr="Charcuterie artisanale · Produits frais · Boissons & spécialités"
-     data-en="Artisan charcuterie · Fresh produce · Drinks & specialties">
-    Charcuterie artisanale · Produits frais · Boissons & spécialités
-  </p>
-  <a href="catalogue.pdf" class="catalogue-btn">
-    <span data-fr="OUVRIR LE CATALOGUE" data-en="OPEN CATALOGUE">OUVRIR LE CATALOGUE</span>
-  </a>
-  <div class="catalogue-update"
-       data-fr="Mis à jour régulièrement"
-       data-en="Regularly updated">
-    Mis à jour régulièrement
+  <div class="catalogue-section reveal">
+    <div class="section-label" id="cat-title">NOTRE CATALOGUE</div>
+    <div class="catalogue-card">
+      <h3 id="cat-h3">Catalogue Maison Rameaux</h3>
+      <p id="cat-desc">Charcuterie artisanale · Traiteur · Épicerie fine</p>
+      <a href="catalogue.pdf" class="catalogue-btn" id="cat-btn">OUVRIR LE CATALOGUE</a>
+      <div class="catalogue-update" id="cat-update">Mis à jour régulièrement</div>
+    </div>
   </div>
-</div>
-```
-
-  </div>
-
-  <!-- CARROUSEL PHOTOS -->
 
   <div class="reveal">
     <div class="carousel">
-      <img src="photo1.jpg.PNG" class="active" alt="">
-      <img src="photo2.jpg.JPEG" alt="">
-      <img src="IMG_004.JPEG" alt="">
-      <img src="IMG_005.heic" alt="">
-      <img src="IMG_006.heic" alt="">
-      <img src="IMG_007.heic" alt="">
-      <img src="IMG_008.heic" alt="">
-      <img src="IMG_009.heic" alt="">
+      <img src="photo1.jpg.PNG" class="active" alt="Maison Rameaux">
+      <img src="photo2.jpg.JPEG" alt="Maison Rameaux">
+      <img src="IMG_004.JPEG" alt="Maison Rameaux">
+      <img src="IMG_005.heic" alt="Maison Rameaux">
+      <img src="IMG_006.heic" alt="Maison Rameaux">
+      <img src="IMG_007.heic" alt="Maison Rameaux">
+      <img src="IMG_008.heic" alt="Maison Rameaux">
+      <img src="IMG_009.heic" alt="Maison Rameaux">
     </div>
   </div>
 
-  <!-- SIGNATURES — CARTES -->
+  <div class="sep"></div>
 
   <div class="products reveal">
-    <h2 class="products-title"
-        data-fr="NOS SIGNATURES"
-        data-en="OUR SIGNATURES">NOS SIGNATURES</h2>
+    <div class="section-label" id="sig-title">NOS SIGNATURES</div>
+    <div class="product-grid">
 
 ```
-<div class="product-grid">
-  <div class="product-card">
-    <span class="product-icon">🥩</span>
-    <div class="product-name"
-         data-fr="Plateaux de charcuterie"
-         data-en="Charcuterie platters">
-      Plateaux de charcuterie
-    </div>
-  </div>
-  <div class="product-card">
-    <span class="product-icon">🍗</span>
-    <div class="product-name"
-         data-fr="Poulet fumé"
-         data-en="Smoked chicken">
-      Poulet fumé
-    </div>
-  </div>
-  <div class="product-card">
-    <span class="product-icon">🐪</span>
-    <div class="product-name"
-         data-fr="Charcuterie de dromadaire"
-         data-en="Camel charcuterie">
-      Charcuterie de dromadaire
-    </div>
-  </div>
+  <a href="produit-plateaux.html" class="product-card" style="border-top:1px solid #1a1a1a;">
+    <div class="product-name" id="prod1">Plateaux de charcuterie</div>
+    <div class="product-sub" id="prod1-sub">Le Gourmand · Le Classique · Le Découverte · Le Raclette</div>
+    <div class="product-arrow" id="prod1-arrow">DÉCOUVRIR →</div>
+  </a>
+
+  <a href="produit-poulet.html" class="product-card">
+    <div class="product-name" id="prod2">Poulet fumé</div>
+    <div class="product-sub" id="prod2-sub">Fumé au bois · Recette maison</div>
+    <div class="product-arrow" id="prod2-arrow">DÉCOUVRIR →</div>
+  </a>
+
+  <a href="produit-dromadaire.html" class="product-card">
+    <div class="product-name" id="prod3">Charcuterie de dromadaire</div>
+    <div class="product-sub" id="prod3-sub">Chorizo · Pastrami · Saucisson · Coppa</div>
+    <div class="product-arrow" id="prod3-arrow">DÉCOUVRIR →</div>
+  </a>
+
 </div>
 ```
 
   </div>
 
-  <!-- ACTIONS -->
+  <div class="sep"></div>
 
   <div class="actions reveal">
     <a href="https://wa.me/212645994082">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-      </svg>
-      <span data-fr="INFOS & COMMANDE" data-en="INFO & ORDER">INFOS & COMMANDE</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="btn-wa">INFOS & COMMANDE</span>
     </a>
-    <a href="https://maps.google.com?q=nr%201252,%20Maison%20Rameaux">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-        <circle cx="12" cy="10" r="3"/>
-      </svg>
-      <span data-fr="NOTRE BOUTIQUE" data-en="OUR STORE">NOTRE BOUTIQUE</span>
+    <a href="https://maps.google.com?q=Maison+Rameaux+Marrakech">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span id="btn-map">NOTRE BOUTIQUE</span>
     </a>
     <a href="https://www.instagram.com/maison_rameaux">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-        <circle cx="12" cy="12" r="4"/>
-        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-      </svg>
-      <span data-fr="NOS RÉSEAUX" data-en="OUR SOCIALS">NOS RÉSEAUX</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+      <span id="btn-ig">NOS RÉSEAUX</span>
     </a>
   </div>
 
-  <!-- INFO -->
-
-  <div class="info-box reveal"
-       data-fr="Ouvert tous les jours • Livraison disponible"
-       data-en="Open daily • Delivery available">
-    Ouvert tous les jours • Livraison disponible
-  </div>
-
-  <!-- FOOTER -->
-
-  <footer class="reveal">
-    Maison Rameaux — Marrakech
-  </footer>
+  <div class="info-box reveal" id="info-box">Ouvert tous les jours &nbsp;•&nbsp; Livraison disponible</div>
+  <footer class="reveal">MAISON RAMEAUX — MARRAKECH</footer>
 
 </div>
 
 <script>
-/* ── LANGUE ── */
+const t = {
+  fr: {
+    sub1:"CHARCUTERIE ARTISANALE HALAL", sub2:"TRAITEUR • ÉPICERIE FINE • MARRAKECH",
+    catTitle:"NOTRE CATALOGUE", catH3:"Catalogue Maison Rameaux",
+    catDesc:"Charcuterie artisanale · Traiteur · Épicerie fine",
+    catBtn:"OUVRIR LE CATALOGUE", catUpdate:"Mis à jour régulièrement",
+    sigTitle:"NOS SIGNATURES",
+    prod1:"Plateaux de charcuterie", prod1sub:"Le Gourmand · Le Classique · Le Découverte · Le Raclette",
+    prod2:"Poulet fumé", prod2sub:"Fumé au bois · Recette maison",
+    prod3:"Charcuterie de dromadaire", prod3sub:"Chorizo · Pastrami · Saucisson · Coppa",
+    decouvrir:"DÉCOUVRIR →",
+    wa:"INFOS & COMMANDE", map:"NOTRE BOUTIQUE", ig:"NOS RÉSEAUX",
+    info:"Ouvert tous les jours • Livraison disponible",
+    accroche:"L'art de la charcuterie,<br>revisité dans le respect du halal.",
+    blocs:[
+      "Chez Maison Rameaux, chaque produit est façonné à la main.<br>Fumé au bois naturel. Élaboré selon nos propres recettes.",
+      "Inspirés du terroir français, de nos racines et de nos voyages —<br>nous créons une charcuterie artisanale d'exception,<br>au cœur de Marrakech.",
+      "Sans conservateur artificiel.<br>100% halal.<br>Du producteur à votre table.",
+      "Notre fierté : la <em>charcuterie de dromadaire</em>.<br>Chorizo, pastrami, saucisson sec, coppa.<br>Une création unique, exclusive à Maison Rameaux."
+    ]
+  },
+  en: {
+    sub1:"HALAL ARTISAN CHARCUTERIE", sub2:"CATERING • FINE GROCERY • MARRAKECH",
+    catTitle:"OUR CATALOGUE", catH3:"Maison Rameaux Catalogue",
+    catDesc:"Artisan charcuterie · Catering · Fine grocery",
+    catBtn:"OPEN CATALOGUE", catUpdate:"Regularly updated",
+    sigTitle:"OUR SIGNATURES",
+    prod1:"Charcuterie platters", prod1sub:"Le Gourmand · Le Classique · Le Découverte · Le Raclette",
+    prod2:"Smoked chicken", prod2sub:"Wood smoked · House recipe",
+    prod3:"Camel charcuterie", prod3sub:"Chorizo · Pastrami · Saucisson · Coppa",
+    decouvrir:"DISCOVER →",
+    wa:"INFO & ORDER", map:"OUR STORE", ig:"OUR SOCIALS",
+    info:"Open daily • Delivery available",
+    accroche:"The art of charcuterie,<br>reinterpreted with halal integrity.",
+    blocs:[
+      "At Maison Rameaux, every product is handcrafted.<br>Wood-smoked. Made from our own recipes.",
+      "Inspired by the French terroir, our roots and our travels —<br>we create exceptional artisanal charcuterie,<br>in the heart of Marrakech.",
+      "No artificial preservatives.<br>100% halal.<br>From our hands to your table.",
+      "Our pride: <em>camel charcuterie</em>.<br>Chorizo, pastrami, dry sausage, coppa.<br>A unique creation, exclusive to Maison Rameaux."
+    ]
+  }
+};
+
 function setLang(lang) {
-  document.querySelectorAll('[data-fr]').forEach(el => {
-    el.textContent = el.getAttribute('data-' + lang);
-  });
+  const tx = t[lang];
+  document.getElementById('sub1').textContent = tx.sub1;
+  document.getElementById('sub2').textContent = tx.sub2;
+  document.getElementById('cat-title').textContent = tx.catTitle;
+  document.getElementById('cat-h3').textContent = tx.catH3;
+  document.getElementById('cat-desc').textContent = tx.catDesc;
+  document.getElementById('cat-btn').textContent = tx.catBtn;
+  document.getElementById('cat-update').textContent = tx.catUpdate;
+  document.getElementById('sig-title').textContent = tx.sigTitle;
+  document.getElementById('prod1').textContent = tx.prod1;
+  document.getElementById('prod1-sub').textContent = tx.prod1sub;
+  document.getElementById('prod2').textContent = tx.prod2;
+  document.getElementById('prod2-sub').textContent = tx.prod2sub;
+  document.getElementById('prod3').textContent = tx.prod3;
+  document.getElementById('prod3-sub').textContent = tx.prod3sub;
+  document.getElementById('prod1-arrow').textContent = tx.decouvrir;
+  document.getElementById('prod2-arrow').textContent = tx.decouvrir;
+  document.getElementById('prod3-arrow').textContent = tx.decouvrir;
+  document.getElementById('btn-wa').textContent = tx.wa;
+  document.getElementById('btn-map').textContent = tx.map;
+  document.getElementById('btn-ig').textContent = tx.ig;
+  document.getElementById('info-box').textContent = tx.info;
+  const b = document.getElementById('texte-bloc');
+  b.innerHTML = '<p class="accroche">'+tx.accroche+'</p>' +
+    tx.blocs.map(p => '<p class="bloc">'+p+'</p>').join('');
   localStorage.setItem('lang', lang);
 }
-const saved = localStorage.getItem('lang') || 'fr';
-setLang(saved);
 
-/* ── CARROUSEL ── */
+setLang(localStorage.getItem('lang') || 'fr');
+
 let idx = 0;
 const imgs = document.querySelectorAll('.carousel img');
-setInterval(() => {
-  imgs[idx].classList.remove('active');
-  idx = (idx + 1) % imgs.length;
-  imgs[idx].classList.add('active');
-}, 4000);
+setInterval(() => { imgs[idx].classList.remove('active'); idx=(idx+1)%imgs.length; imgs[idx].classList.add('active'); }, 4000);
 
-/* ── SCROLL REVEAL ── */
-const reveals = document.querySelectorAll('.reveal');
 const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      obs.unobserve(e.target);
-    }
-  });
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} });
 }, { threshold: 0.1 });
-reveals.forEach(r => obs.observe(r));
+document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
 
-/* ── BOUTON RETOUR EN HAUT ── */
 const btn = document.getElementById('backTop');
-window.addEventListener('scroll', () => {
-  btn.classList.toggle('visible', window.scrollY > 300);
-});
+window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 300));
 </script>
 
 </body>
