@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Rameaux — Charcuterie de dromadaire</title>
+<meta name="description" content="Charcuterie de dromadaire Maison Rameaux : chorizo, pastrami fumé, saucisson sec et coppa. Créations artisanales halal exclusives, fabriquées à Marrakech.">
+<link rel="icon" type="image/png" href="Logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: radial-gradient(circle at top, #111, #000 70%); color: #f5f5f5; font-family: "Cormorant Garamond", serif; min-height: 100vh; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);} }
+.fade-1 { animation: fadeUp 0.7s ease 0.1s both; }
+.reveal { opacity:0; transform:translateY(18px); transition:opacity 0.7s ease,transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* NAVBAR */
+.navbar { display:flex; align-items:center; justify-content:space-between; padding:14px 20px; border-bottom:1px solid #1a1a1a; position:sticky; top:0; z-index:100; background:rgba(0,0,0,0.96); }
+.nav-back { display:flex; align-items:center; gap:7px; text-decoration:none; color:#777; font-family:‘Montserrat’,sans-serif; font-size:9px; letter-spacing:2px; transition:color 0.3s; }
+.nav-back:hover { color:#c6a66b; }
+.nav-back svg { width:12px; height:12px; }
+.nav-logo { width:65px; }
+.lang-switch { display:flex; gap:5px; }
+.lang-switch button { background:none; border:1px solid #2a2a2a; color:#555; padding:4px 9px; cursor:pointer; font-family:‘Montserrat’,sans-serif; font-size:9px; letter-spacing:1px; transition:all 0.2s; }
+.lang-switch button:hover { border-color:#c6a66b; color:#fff; }
+
+/* HERO */
+.page-hero { text-align:center; padding:36px 20px 0; }
+.page-title { font-style:italic; font-weight:300; font-size:1.9rem; color:#f0ebe0; letter-spacing:2px; margin-bottom:6px; }
+.page-sub { font-family:‘Montserrat’,sans-serif; font-size:9px; letter-spacing:4px; color:#c6a66b; margin-bottom:18px; }
+.line { width:45%; height:1px; margin:0 auto 30px; background:linear-gradient(to right,#002395,white,#ED2939); }
+
+/* CONTAINER */
+.container { max-width:600px; margin:0 auto; padding:20px 18px 80px; }
+
+/* INTRO */
+.page-intro { color:#aaa; font-style:italic; font-size:1.05rem; line-height:1.9; margin-bottom:50px; text-align:left; }
+.page-intro p { margin-bottom:0.85em; }
+.page-intro p:last-child { margin-bottom:0; }
+
+/* SECTION LABEL */
+.section-label { font-family:‘Montserrat’,sans-serif; font-size:10px; letter-spacing:5px; color:#c6a66b; margin-bottom:28px; text-align:center; }
+
+/* SÉPARATEUR */
+.sep { width:1px; height:40px; background:linear-gradient(to bottom,transparent,#2a2a2a,transparent); margin:50px auto; }
+
+/* PRODUIT — PHOTO + TEXTE + BOUTON */
+.product-section { margin-bottom:0; text-align:left; }
+
+.product-photo-wrap {
+width:100%; aspect-ratio:4/3;
+overflow:hidden; border-radius:4px;
+margin-bottom:22px; background:#111;
+}
+.product-photo {
+width:100%; height:100%;
+object-fit:cover; display:block;
+transition:transform 0.5s ease;
+}
+.product-photo-wrap:hover .product-photo { transform:scale(1.03); }
+
+.product-name {
+font-style:italic; font-size:1.4rem;
+color:#f0ebe0; letter-spacing:1px;
+margin-bottom:12px;
+}
+.product-desc {
+color:#aaa; font-style:italic;
+font-size:1rem; line-height:1.9;
+margin-bottom:10px;
+}
+.product-desc p { margin-bottom:0.75em; }
+.product-desc p:last-child { margin-bottom:0; }
+
+.badge {
+display:inline-block;
+border:1px solid #1a1a1a; padding:7px 16px;
+font-family:‘Montserrat’,sans-serif;
+font-size:8px; letter-spacing:3px; color:#555;
+margin-bottom:20px;
+}
+
+.btn-cmd {
+display:flex; align-items:center; justify-content:center;
+gap:10px; width:100%; padding:15px 20px;
+background:rgba(198,166,107,0.06);
+border:1px solid #c6a66b;
+color:#c6a66b; text-decoration:none;
+font-family:‘Montserrat’,sans-serif;
+font-size:10px; letter-spacing:2.5px;
+transition:all 0.3s;
+}
+.btn-cmd svg { width:14px; height:14px; flex-shrink:0; }
+.btn-cmd:hover { background:#c6a66b; color:#000; }
+
+/* FOOTER */
+footer { margin-top:60px; padding-top:20px; border-top:1px solid #111; text-align:center; font-family:‘Montserrat’,sans-serif; font-size:9px; letter-spacing:3px; color:#2a2a2a; }
+
+#backTop { position:fixed; bottom:24px; right:18px; z-index:999; width:38px; height:38px; background:rgba(0,0,0,0.9); border:1px solid #222; color:#555; display:flex; align-items:center; justify-content:center; text-decoration:none; opacity:0; pointer-events:none; transition:all 0.3s; }
+#backTop.visible { opacity:1; pointer-events:all; }
+#backTop:hover { border-color:#c6a66b; color:#c6a66b; }
+#backTop svg { width:13px; height:13px; }
+</style>
+
+</head>
+<body>
+<div id="top"></div>
+<nav class="navbar">
+  <a href="maison-rameaux.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    <span id="nav-retour">RETOUR</span>
+  </a>
+  <img src="Logo.png" class="nav-logo" alt="Maison Rameaux">
+  <div class="lang-switch">
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<div class="page-hero fade-1">
+  <h1 class="page-title" id="page-title">Charcuterie de dromadaire</h1>
+  <p class="page-sub" id="page-sub">CRÉATIONS EXCLUSIVES — MAISON RAMEAUX</p>
+  <div class="line"></div>
+</div>
+
+<div class="container">
+
+  <div class="page-intro reveal" id="page-intro">
+    <p>Un produit rare. Une création unique.</p>
+    <p>Chez Maison Rameaux, nous avons relevé le défi de transformer la viande de dromadaire en charcuterie artisanale d'exception.</p>
+    <p>Fumée au bois. Préparée à la main.<br>Sans conservateur artificiel. 100% halal.<br>Exclusif à Marrakech.</p>
+  </div>
+
+  <div class="section-label reveal" id="produits-label">NOS PRODUITS</div>
+
+  <!-- CHORIZO -->
+
+  <div class="product-section reveal">
+    <div class="product-photo-wrap">
+      <img src="chorizo-photo.jpg" class="product-photo" alt="Chorizo de dromadaire">
+    </div>
+    <div class="product-name" id="chorizo-name">Chorizo de dromadaire</div>
+    <div class="product-desc" id="chorizo-desc">
+      <p>Un chorizo d'exception, élaboré à partir de viande de dromadaire soigneusement sélectionnée.</p>
+      <p>Relevé d'épices fumées, séché artisanalement.<br>Sans conservateur. 100% halal.</p>
+    </div>
+    <div class="badge" id="chorizo-badge">100% HALAL • ARTISANAL • FUMÉ AU BOIS</div><br>
+    <a href="#" id="chorizo-btn" class="btn-cmd">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="chorizo-btn-txt">INFOS & COMMANDE</span>
+    </a>
+  </div>
+
+  <div class="sep"></div>
+
+  <!-- PASTRAMI -->
+
+  <div class="product-section reveal">
+    <div class="product-photo-wrap">
+      <img src="pastrami-photo.jpg" class="product-photo" alt="Pastrami fumé de dromadaire">
+    </div>
+    <div class="product-name" id="pastrami-name">Pastrami fumé de dromadaire</div>
+    <div class="product-desc" id="pastrami-desc">
+      <p>Mariné longuement dans un mélange d'épices inspiré du terroir français.</p>
+      <p>Fumé lentement au bois naturel.<br>Fondant, savoureux, aux arômes profonds et persistants.</p>
+    </div>
+    <div class="badge" id="pastrami-badge">100% HALAL • ARTISANAL • FUMÉ AU BOIS</div><br>
+    <a href="#" id="pastrami-btn" class="btn-cmd">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="pastrami-btn-txt">INFOS & COMMANDE</span>
+    </a>
+  </div>
+
+  <div class="sep"></div>
+
+  <!-- SAUCISSON -->
+
+  <div class="product-section reveal">
+    <div class="product-photo-wrap">
+      <img src="saucisson-photo.jpg" class="product-photo" alt="Saucisson sec de dromadaire">
+    </div>
+    <div class="product-name" id="saucisson-name">Saucisson sec de dromadaire</div>
+    <div class="product-desc" id="saucisson-desc">
+      <p>Façonné à la main selon nos propres recettes.</p>
+      <p>Séché naturellement.<br>Texture ferme, goût affirmé.<br>Idéal en plateau ou à l'apéritif.</p>
+    </div>
+    <div class="badge" id="saucisson-badge">100% HALAL • ARTISANAL • SÉCHÉ NATURELLEMENT</div><br>
+    <a href="#" id="saucisson-btn" class="btn-cmd">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="saucisson-btn-txt">INFOS & COMMANDE</span>
+    </a>
+  </div>
+
+  <div class="sep"></div>
+
+  <!-- COPPA -->
+
+  <div class="product-section reveal">
+    <div class="product-photo-wrap">
+      <img src="coppa-photo.jpg" class="product-photo" alt="Coppa de dromadaire">
+    </div>
+    <div class="product-name" id="coppa-name">Coppa de dromadaire</div>
+    <div class="product-desc" id="coppa-desc">
+      <p>Inspirée de la tradition italienne, revisitée à notre façon.</p>
+      <p>Affinée lentement, assaisonnée aux herbes sélectionnées.<br>Un produit rare, exclusif à Maison Rameaux.</p>
+    </div>
+    <div class="badge" id="coppa-badge">100% HALAL • ARTISANAL • AFFINÉ</div><br>
+    <a href="#" id="coppa-btn" class="btn-cmd">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="coppa-btn-txt">INFOS & COMMANDE</span>
+    </a>
+  </div>
+
+  <footer>MAISON RAMEAUX — MARRAKECH</footer>
+</div>
+
+<a href="#top" id="backTop">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+</a>
+
+<script>
+const WA = "212645994082";
+const wa = (lang, name) => 'https://wa.me/'+WA+'?text='+encodeURIComponent(
+  lang==='fr'
+    ? 'Bonjour, salam alaykoum,\nje souhaite commander '+name+'.\nPouvez-vous me confirmer la disponibilité ainsi que les tarifs svp ?\nBarakAllahou fikoum.'
+    : 'Hello, salam alaykoum,\nI would like to order '+name+'.\nCould you please confirm availability and pricing?\nBarakAllahou fikoum.'
+);
+const t = {
+  fr: {
+    retour:"RETOUR", pageTitle:"Charcuterie de dromadaire", pageSub:"CRÉATIONS EXCLUSIVES — MAISON RAMEAUX",
+    produitsLabel:"NOS PRODUITS", btnTxt:"INFOS & COMMANDE",
+    intro:["Un produit rare. Une création unique.","Chez Maison Rameaux, nous avons relevé le défi de transformer la viande de dromadaire en charcuterie artisanale d'exception.","Fumée au bois. Préparée à la main.<br>Sans conservateur artificiel. 100% halal.<br>Exclusif à Marrakech."],
+    chorizo: { name:"Chorizo de dromadaire", badge:"100% HALAL • ARTISANAL • FUMÉ AU BOIS", desc:["Un chorizo d'exception, élaboré à partir de viande de dromadaire soigneusement sélectionnée.","Relevé d'épices fumées, séché artisanalement.<br>Sans conservateur. 100% halal."] },
+    pastrami: { name:"Pastrami fumé de dromadaire", badge:"100% HALAL • ARTISANAL • FUMÉ AU BOIS", desc:["Mariné longuement dans un mélange d'épices inspiré du terroir français.","Fumé lentement au bois naturel.<br>Fondant, savoureux, aux arômes profonds et persistants."] },
+    saucisson: { name:"Saucisson sec de dromadaire", badge:"100% HALAL • ARTISANAL • SÉCHÉ NATURELLEMENT", desc:["Façonné à la main selon nos propres recettes.","Séché naturellement.<br>Texture ferme, goût affirmé.<br>Idéal en plateau ou à l'apéritif."] },
+    coppa: { name:"Coppa de dromadaire", badge:"100% HALAL • ARTISANAL • AFFINÉ", desc:["Inspirée de la tradition italienne, revisitée à notre façon.","Affinée lentement, assaisonnée aux herbes sélectionnées.<br>Un produit rare, exclusif à Maison Rameaux."] }
+  },
+  en: {
+    retour:"BACK", pageTitle:"Camel charcuterie", pageSub:"EXCLUSIVE CREATIONS — MAISON RAMEAUX",
+    produitsLabel:"OUR PRODUCTS", btnTxt:"INFO & ORDER",
+    intro:["A rare product. A unique creation.","At Maison Rameaux, we took on the challenge of transforming camel meat into exceptional artisanal charcuterie.","Wood-smoked. Handcrafted.<br>No artificial preservatives. 100% halal.<br>Exclusive to Marrakech."],
+    chorizo: { name:"Camel chorizo", badge:"100% HALAL • ARTISANAL • WOOD SMOKED", desc:["An exceptional chorizo made from carefully selected camel meat.","Seasoned with smoked spices, artisanally dried.<br>No preservatives. 100% halal."] },
+    pastrami: { name:"Smoked camel pastrami", badge:"100% HALAL • ARTISANAL • WOOD SMOKED", desc:["Marinated in a blend of spices inspired by the French terroir.","Slowly smoked over natural wood.<br>Tender, flavourful, with deep and lasting aromas."] },
+    saucisson: { name:"Dry camel sausage", badge:"100% HALAL • ARTISANAL • NATURALLY DRIED", desc:["Hand-shaped according to our own recipes.","Naturally dried.<br>Firm texture, bold flavour.<br>Perfect on a platter or as an aperitif."] },
+    coppa: { name:"Camel coppa", badge:"100% HALAL • ARTISANAL • AGED", desc:["Inspired by Italian tradition, revisited in our own way.","Slowly aged, seasoned with selected herbs.<br>A rare product, exclusive to Maison Rameaux."] }
+  }
+};
+function setLang(lang) {
+  const tx = t[lang];
+  document.getElementById('nav-retour').textContent = tx.retour;
+  document.getElementById('page-title').textContent = tx.pageTitle;
+  document.getElementById('page-sub').textContent = tx.pageSub;
+  document.getElementById('produits-label').textContent = tx.produitsLabel;
+  document.getElementById('page-intro').innerHTML = tx.intro.map(p=>'<p>'+p+'</p>').join('');
+  ['chorizo','pastrami','saucisson','coppa'].forEach(k => {
+    const p = tx[k];
+    document.getElementById(k+'-name').textContent = p.name;
+    document.getElementById(k+'-badge').textContent = p.badge;
+    document.getElementById(k+'-desc').innerHTML = p.desc.map(d=>'<p>'+d+'</p>').join('');
+    document.getElementById(k+'-btn').href = wa(lang, p.name);
+    document.getElementById(k+'-btn-txt').textContent = tx.btnTxt;
+  });
+  localStorage.setItem('lang', lang);
+}
+setLang(localStorage.getItem('lang')||'fr');
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+const btn=document.getElementById('backTop');
+window.addEventListener('scroll',()=>btn.classList.toggle('visible',window.scrollY>300));
+</script>
+
+</body>
+</html>
