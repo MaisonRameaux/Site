@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Rameaux — Plateaux de charcuterie</title>
+<meta name="description" content="Plateaux de charcuterie artisanale halal Maison Rameaux : Le Gourmand, Le Classique, Le Découverte, Le Raclette. Fumé au bois, 100% halal, Marrakech.">
+<link rel="icon" type="image/png" href="Logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: radial-gradient(circle at top, #111, #000 70%); color: #f5f5f5; font-family: "Cormorant Garamond", serif; min-height: 100vh; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);} }
+.fade-1 { animation: fadeUp 0.7s ease 0.1s both; }
+.reveal { opacity:0; transform:translateY(18px); transition:opacity 0.7s ease,transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.navbar { display:flex; align-items:center; justify-content:space-between; padding:14px 20px; border-bottom:1px solid #1a1a1a; position:sticky; top:0; z-index:100; background:rgba(0,0,0,0.96); }
+.nav-back { display:flex; align-items:center; gap:7px; text-decoration:none; color:#777; font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:2px; transition:color 0.3s; }
+.nav-back:hover { color:#c6a66b; }
+.nav-back svg { width:12px; height:12px; }
+.nav-logo { width:65px; }
+.lang-switch { display:flex; gap:5px; }
+.lang-switch button { background:none; border:1px solid #2a2a2a; color:#555; padding:4px 9px; cursor:pointer; font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:1px; transition:all 0.2s; }
+.lang-switch button:hover { border-color:#c6a66b; color:#fff; }
+.page-hero { text-align:center; padding:36px 20px 0; }
+.page-title { font-style:italic; font-weight:300; font-size:1.9rem; color:#f0ebe0; letter-spacing:2px; margin-bottom:6px; }
+.page-sub { font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:4px; color:#c6a66b; margin-bottom:18px; }
+.line { width:45%; height:1px; margin:0 auto 30px; background:linear-gradient(to right,#002395,white,#ED2939); }
+.container { max-width:600px; margin:0 auto; padding:20px 18px 80px; }
+.page-intro { color:#aaa; font-style:italic; font-size:1.05rem; line-height:1.9; margin-bottom:50px; text-align:left; }
+.page-intro p { margin-bottom:0.85em; }
+.page-intro p:last-child { margin-bottom:0; }
+.section-label { font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:5px; color:#c6a66b; margin-bottom:28px; text-align:center; }
+.sep { width:1px; height:40px; background:linear-gradient(to bottom,transparent,#2a2a2a,transparent); margin:50px auto; }
+.product-section { text-align:left; }
+.product-photo-wrap { width:100%; aspect-ratio:4/3; overflow:hidden; border-radius:4px; margin-bottom:22px; background:#111; }
+.product-photo { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease; }
+.product-photo-wrap:hover .product-photo { transform:scale(1.03); }
+.product-name { font-style:italic; font-size:1.4rem; color:#f0ebe0; letter-spacing:1px; margin-bottom:12px; }
+.product-desc { color:#aaa; font-style:italic; font-size:1rem; line-height:1.9; margin-bottom:10px; }
+.product-desc p { margin-bottom:0.75em; }
+.product-desc p:last-child { margin-bottom:0; }
+.badge { display:inline-block; border:1px solid #1a1a1a; padding:7px 16px; font-family:'Montserrat',sans-serif; font-size:8px; letter-spacing:3px; color:#555; margin-bottom:20px; }
+.btn-cmd { display:flex; align-items:center; justify-content:center; gap:10px; width:100%; padding:15px 20px; background:rgba(198,166,107,0.06); border:1px solid #c6a66b; color:#c6a66b; text-decoration:none; font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:2.5px; transition:all 0.3s; }
+.btn-cmd svg { width:14px; height:14px; flex-shrink:0; }
+.btn-cmd:hover { background:#c6a66b; color:#000; }
+footer { margin-top:60px; padding-top:20px; border-top:1px solid #111; text-align:center; font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:3px; color:#2a2a2a; }
+#backTop { position:fixed; bottom:24px; right:18px; z-index:999; width:38px; height:38px; background:rgba(0,0,0,0.9); border:1px solid #222; color:#555; display:flex; align-items:center; justify-content:center; text-decoration:none; opacity:0; pointer-events:none; transition:all 0.3s; }
+#backTop.visible { opacity:1; pointer-events:all; }
+#backTop:hover { border-color:#c6a66b; color:#c6a66b; }
+#backTop svg { width:13px; height:13px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+<nav class="navbar">
+  <a href="maison-rameaux.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    <span id="nav-retour">RETOUR</span>
+  </a>
+  <img src="Logo.png" class="nav-logo" alt="Maison Rameaux">
+  <div class="lang-switch">
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+<div class="page-hero fade-1">
+  <h1 class="page-title" id="page-title">Plateaux de charcuterie</h1>
+  <p class="page-sub" id="page-sub">MAISON RAMEAUX — MARRAKECH</p>
+  <div class="line"></div>
+</div>
+<div class="container">
+
+  <div class="page-intro reveal" id="page-intro">
+    <p>Pour chaque occasion, un plateau pensé avec soin.</p>
+    <p>Nos plateaux sont composés de charcuteries artisanales halal,<br>fumées au bois et élaborées selon nos propres recettes.</p>
+    <p>À partager, à offrir, à savourer.</p>
+  </div>
+
+  <div class="section-label reveal" id="produits-label">NOS PLATEAUX</div>
+
+  <!-- LE GOURMAND -->
+
+  <div class="product-section reveal">
+    <div class="product-photo-wrap">
+      <img src="plateau1-photo.jpg" class="product-photo" alt="Le Gourmand">
+    </div>
+    <div class="product-name" id="p1-name">Le Gourmand</div>
+    <div class="product-desc" id="p1-desc">
+      <p>Notre plateau le plus généreux.</p>
+      <p>Une sélection complète de nos meilleures charcuteries artisanales.<br>Pour les grandes tablées et les moments d'exception.</p>
+    </div>
+    <div class="badge" id="p1-badge">100% HALAL • ARTISANAL • FUMÉ AU BOIS</div><br>
+    <a href="#" id="p1-btn" class="btn-cmd">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="p1-btn-txt">INFOS & COMMANDE</span>
+    </a>
+  </div>
+
+  <div class="sep"></div>
+
+  <!-- LE CLASSIQUE -->
+
+  <div class="product-section reveal">
+    <div class="product-photo-wrap">
+      <img src="plateau2-photo.jpg" class="product-photo" alt="Le Classique">
+    </div>
+    <div class="product-name" id="p2-name">Le Classique</div>
+    <div class="product-desc" id="p2-desc">
+      <p>L'essentiel de la charcuterie Maison Rameaux.</p>
+      <p>Équilibré, élégant.<br>Idéal pour toutes les occasions.</p>
+    </div>
+    <div class="badge" id="p2-badge">100% HALAL • ARTISANAL • FUMÉ AU BOIS</div><br>
+    <a href="#" id="p2-btn" class="btn-cmd">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="p2-btn-txt">INFOS & COMMANDE</span>
+    </a>
+  </div>
+
+  <div class="sep"></div>
+
+  <!-- LE DÉCOUVERTE -->
+
+  <div class="product-section reveal">
+    <div class="product-photo-wrap">
+      <img src="plateau3-photo.jpg" class="product-photo" alt="Le Découverte">
+    </div>
+    <div class="product-name" id="p3-name">Le Découverte</div>
+    <div class="product-desc" id="p3-desc">
+      <p>Parfait pour une première rencontre avec nos saveurs.</p>
+      <p>Une sélection variée, accessible et savoureuse.<br>Idéal pour initier vos convives.</p>
+    </div>
+    <div class="badge" id="p3-badge">100% HALAL • ARTISANAL • FUMÉ AU BOIS</div><br>
+    <a href="#" id="p3-btn" class="btn-cmd">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="p3-btn-txt">INFOS & COMMANDE</span>
+    </a>
+  </div>
+
+  <div class="sep"></div>
+
+  <!-- LE RACLETTE -->
+
+  <div class="product-section reveal">
+    <div class="product-photo-wrap">
+      <img src="plateau4-photo.jpg" class="product-photo" alt="Le Raclette">
+    </div>
+    <div class="product-name" id="p4-name">Le Raclette</div>
+    <div class="product-desc" id="p4-desc">
+      <p>Spécialement pensé pour accompagner une raclette.</p>
+      <p>Charcuteries fumées, généreuses et conviviales.<br>Le plateau parfait pour les soirées en famille.</p>
+    </div>
+    <div class="badge" id="p4-badge">100% HALAL • ARTISANAL • FUMÉ AU BOIS</div><br>
+    <a href="#" id="p4-btn" class="btn-cmd">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="p4-btn-txt">INFOS & COMMANDE</span>
+    </a>
+  </div>
+
+  <footer>MAISON RAMEAUX — MARRAKECH</footer>
+</div>
+
+<a href="#top" id="backTop">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+</a>
+
+<script>
+const WA = "212645994082";
+const wa = (lang, name) => 'https://wa.me/'+WA+'?text='+encodeURIComponent(
+  lang==='fr'
+    ? 'Bonjour, salam alaykoum,\nje souhaite commander '+name+'.\nPouvez-vous me confirmer la disponibilité ainsi que les tarifs svp ?\nBarakAllahou fikoum.'
+    : 'Hello, salam alaykoum,\nI would like to order '+name+'.\nCould you please confirm availability and pricing?\nBarakAllahou fikoum.'
+);
+const t = {
+  fr: {
+    retour:"RETOUR", pageTitle:"Plateaux de charcuterie", pageSub:"MAISON RAMEAUX — MARRAKECH",
+    produitsLabel:"NOS PLATEAUX", btnTxt:"INFOS & COMMANDE",
+    intro:["Pour chaque occasion, un plateau pensé avec soin.","Nos plateaux sont composés de charcuteries artisanales halal,<br>fumées au bois et élaborées selon nos propres recettes.","À partager, à offrir, à savourer."],
+    p1:{name:"Le Gourmand", badge:"100% HALAL • ARTISANAL • FUMÉ AU BOIS", desc:["Notre plateau le plus généreux.","Une sélection complète de nos meilleures charcuteries artisanales.<br>Pour les grandes tablées et les moments d'exception."]},
+    p2:{name:"Le Classique", badge:"100% HALAL • ARTISANAL • FUMÉ AU BOIS", desc:["L'essentiel de la charcuterie Maison Rameaux.","Équilibré, élégant.<br>Idéal pour toutes les occasions."]},
+    p3:{name:"Le Découverte", badge:"100% HALAL • ARTISANAL • FUMÉ AU BOIS", desc:["Parfait pour une première rencontre avec nos saveurs.","Une sélection variée, accessible et savoureuse.<br>Idéal pour initier vos convives."]},
+    p4:{name:"Le Raclette", badge:"100% HALAL • ARTISANAL • FUMÉ AU BOIS", desc:["Spécialement pensé pour accompagner une raclette.","Charcuteries fumées, généreuses et conviviales.<br>Le plateau parfait pour les soirées en famille."]}
+  },
+  en: {
+    retour:"BACK", pageTitle:"Charcuterie platters", pageSub:"MAISON RAMEAUX — MARRAKECH",
+    produitsLabel:"OUR PLATTERS", btnTxt:"INFO & ORDER",
+    intro:["A platter crafted for every occasion.","Our platters are made from artisanal halal charcuterie,<br>wood-smoked and prepared from our own recipes.","To share, to gift, to savour."],
+    p1:{name:"Le Gourmand", badge:"100% HALAL • ARTISANAL • WOOD SMOKED", desc:["Our most generous platter.","A full selection of our finest artisanal charcuterie.<br>For large gatherings and special moments."]},
+    p2:{name:"Le Classique", badge:"100% HALAL • ARTISANAL • WOOD SMOKED", desc:["The essentials of Maison Rameaux charcuterie.","Balanced and elegant.<br>Perfect for any occasion."]},
+    p3:{name:"Le Découverte", badge:"100% HALAL • ARTISANAL • WOOD SMOKED", desc:["The perfect introduction to our flavours.","A varied, accessible and delicious selection.<br>Ideal for introducing your guests to our world."]},
+    p4:{name:"Le Raclette", badge:"100% HALAL • ARTISANAL • WOOD SMOKED", desc:["Specially designed to accompany a raclette.","Smoked charcuterie, generous and convivial.<br>The perfect platter for family evenings."]}
+  }
+};
+function setLang(lang) {
+  const tx = t[lang];
+  document.getElementById('nav-retour').textContent = tx.retour;
+  document.getElementById('page-title').textContent = tx.pageTitle;
+  document.getElementById('page-sub').textContent = tx.pageSub;
+  document.getElementById('produits-label').textContent = tx.produitsLabel;
+  document.getElementById('page-intro').innerHTML = tx.intro.map(p=>'<p>'+p+'</p>').join('');
+  ['p1','p2','p3','p4'].forEach(k => {
+    const p = tx[k];
+    document.getElementById(k+'-name').textContent = p.name;
+    document.getElementById(k+'-badge').textContent = p.badge;
+    document.getElementById(k+'-desc').innerHTML = p.desc.map(d=>'<p>'+d+'</p>').join('');
+    document.getElementById(k+'-btn').href = wa(lang, p.name);
+    document.getElementById(k+'-btn-txt').textContent = tx.btnTxt;
+  });
+  localStorage.setItem('lang', lang);
+}
+setLang(localStorage.getItem('lang')||'fr');
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+const btn=document.getElementById('backTop');
+window.addEventListener('scroll',()=>btn.classList.toggle('visible',window.scrollY>300));
+</script>
+
+</body>
+</html>
