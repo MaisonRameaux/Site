@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Rameaux — Poulet fumé</title>
+<meta name="description" content="Poulet fumé artisanal halal Maison Rameaux. Fumé au bois naturel, mariné selon nos propres recettes. Exclusif à Marrakech.">
+<link rel="icon" type="image/png" href="Logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: radial-gradient(circle at top, #111, #000 70%); color: #f5f5f5; font-family: "Cormorant Garamond", serif; min-height: 100vh; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);} }
+.fade-1 { animation: fadeUp 0.7s ease 0.1s both; }
+.reveal { opacity:0; transform:translateY(18px); transition:opacity 0.7s ease,transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.navbar { display:flex; align-items:center; justify-content:space-between; padding:14px 20px; border-bottom:1px solid #1a1a1a; position:sticky; top:0; z-index:100; background:rgba(0,0,0,0.96); }
+.nav-back { display:flex; align-items:center; gap:7px; text-decoration:none; color:#777; font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:2px; transition:color 0.3s; }
+.nav-back:hover { color:#c6a66b; }
+.nav-back svg { width:12px; height:12px; }
+.nav-logo { width:65px; }
+.lang-switch { display:flex; gap:5px; }
+.lang-switch button { background:none; border:1px solid #2a2a2a; color:#555; padding:4px 9px; cursor:pointer; font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:1px; transition:all 0.2s; }
+.lang-switch button:hover { border-color:#c6a66b; color:#fff; }
+.page-hero { text-align:center; padding:36px 20px 0; }
+.page-title { font-style:italic; font-weight:300; font-size:1.9rem; color:#f0ebe0; letter-spacing:2px; margin-bottom:6px; }
+.page-sub { font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:4px; color:#c6a66b; margin-bottom:18px; }
+.line { width:45%; height:1px; margin:0 auto 30px; background:linear-gradient(to right,#002395,white,#ED2939); }
+.container { max-width:600px; margin:0 auto; padding:20px 18px 80px; text-align:left; }
+.product-photo-wrap { width:100%; aspect-ratio:4/3; overflow:hidden; border-radius:4px; margin-bottom:28px; background:#111; }
+.product-photo { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease; }
+.product-photo-wrap:hover .product-photo { transform:scale(1.03); }
+.product-desc { color:#aaa; font-style:italic; font-size:1.05rem; line-height:1.9; margin-bottom:22px; }
+.product-desc p { margin-bottom:0.85em; }
+.product-desc p:last-child { margin-bottom:0; }
+.badge { display:inline-block; border:1px solid #1a1a1a; padding:7px 16px; font-family:'Montserrat',sans-serif; font-size:8px; letter-spacing:3px; color:#555; margin-bottom:24px; }
+.btn-cmd { display:flex; align-items:center; justify-content:center; gap:10px; width:100%; padding:15px 20px; background:rgba(198,166,107,0.06); border:1px solid #c6a66b; color:#c6a66b; text-decoration:none; font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:2.5px; transition:all 0.3s; }
+.btn-cmd svg { width:14px; height:14px; flex-shrink:0; }
+.btn-cmd:hover { background:#c6a66b; color:#000; }
+footer { margin-top:60px; padding-top:20px; border-top:1px solid #111; text-align:center; font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:3px; color:#2a2a2a; }
+#backTop { position:fixed; bottom:24px; right:18px; z-index:999; width:38px; height:38px; background:rgba(0,0,0,0.9); border:1px solid #222; color:#555; display:flex; align-items:center; justify-content:center; text-decoration:none; opacity:0; pointer-events:none; transition:all 0.3s; }
+#backTop.visible { opacity:1; pointer-events:all; }
+#backTop:hover { border-color:#c6a66b; color:#c6a66b; }
+#backTop svg { width:13px; height:13px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+<nav class="navbar">
+  <a href="maison-rameaux.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    <span id="nav-retour">RETOUR</span>
+  </a>
+  <img src="Logo.png" class="nav-logo" alt="Maison Rameaux">
+  <div class="lang-switch">
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+<div class="page-hero fade-1">
+  <h1 class="page-title" id="page-title">Poulet fumé</h1>
+  <p class="page-sub" id="page-sub">MAISON RAMEAUX — MARRAKECH</p>
+  <div class="line"></div>
+</div>
+<div class="container">
+  <div class="product-photo-wrap reveal">
+    <img src="poulet-photo.jpg" class="product-photo" alt="Poulet fumé Maison Rameaux">
+  </div>
+  <div class="product-desc reveal" id="prod-desc">
+    <p>Un poulet fumé comme vous n'en avez jamais goûté.</p>
+    <p>Mariné selon notre recette maison,<br>inspirée du terroir français.</p>
+    <p>Fumé lentement au bois naturel,<br>jusqu'à révéler des arômes profonds<br>et une chair tendre, juteuse, incomparable.</p>
+    <p>Sans conservateur artificiel.<br>100% halal.<br>Fait maison à Marrakech.</p>
+  </div>
+  <div class="badge reveal" id="prod-badge">100% HALAL • FUMÉ AU BOIS • RECETTE MAISON</div><br>
+  <div class="reveal">
+    <a href="#" id="prod-btn" class="btn-cmd">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="prod-btn-txt">INFOS & COMMANDE</span>
+    </a>
+  </div>
+  <footer>MAISON RAMEAUX — MARRAKECH</footer>
+</div>
+<a href="#top" id="backTop">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+</a>
+<script>
+const WA="212645994082";
+const t={
+  fr:{retour:"RETOUR",pageTitle:"Poulet fumé",pageSub:"MAISON RAMEAUX — MARRAKECH",
+    badge:"100% HALAL • FUMÉ AU BOIS • RECETTE MAISON",btnTxt:"INFOS & COMMANDE",
+    desc:["Un poulet fumé comme vous n'en avez jamais goûté.","Mariné selon notre recette maison,<br>inspirée du terroir français.","Fumé lentement au bois naturel,<br>jusqu'à révéler des arômes profonds<br>et une chair tendre, juteuse, incomparable.","Sans conservateur artificiel.<br>100% halal.<br>Fait maison à Marrakech."],
+    waMsg:encodeURIComponent("Bonjour, salam alaykoum,\nje souhaite commander le Poulet fumé.\nPouvez-vous me confirmer la disponibilité ainsi que les tarifs svp ?\nBarakAllahou fikoum.")},
+  en:{retour:"BACK",pageTitle:"Smoked chicken",pageSub:"MAISON RAMEAUX — MARRAKECH",
+    badge:"100% HALAL • WOOD SMOKED • HOUSE RECIPE",btnTxt:"INFO & ORDER",
+    desc:["A smoked chicken like no other.","Marinated using our house recipe,<br>inspired by the French terroir.","Slowly smoked over natural wood,<br>revealing deep aromas<br>and incomparably tender, juicy meat.","No artificial preservatives.<br>100% halal.<br>Handmade in Marrakech."],
+    waMsg:encodeURIComponent("Hello, salam alaykoum,\nI would like to order the Smoked chicken.\nCould you please confirm availability and pricing?\nBarakAllahou fikoum.")}
+};
+function setLang(lang){
+  const tx=t[lang];
+  document.getElementById('nav-retour').textContent=tx.retour;
+  document.getElementById('page-title').textContent=tx.pageTitle;
+  document.getElementById('page-sub').textContent=tx.pageSub;
+  document.getElementById('prod-badge').textContent=tx.badge;
+  document.getElementById('prod-btn-txt').textContent=tx.btnTxt;
+  document.getElementById('prod-btn').href='https://wa.me/'+WA+'?text='+tx.waMsg;
+  document.getElementById('prod-desc').innerHTML=tx.desc.map(p=>'<p>'+p+'</p>').join('');
+  localStorage.setItem('lang',lang);
+}
+setLang(localStorage.getItem('lang')||'fr');
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+const btn=document.getElementById('backTop');
+window.addEventListener('scroll',()=>btn.classList.toggle('visible',window.scrollY>300));
+</script>
+</body>
+</html>
