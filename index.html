@@ -58,22 +58,33 @@ transition: all 0.2s;
 
 /* TEXTE PRÉSENTATION */
 .text {
-max-width: 480px; margin: 0 auto;
+max-width: 480px;
+margin: 0 auto;
 text-align: left;
-font-size: 1.05rem; line-height: 1.95;
+font-size: 1.05rem;
+line-height: 1.7;
+word-wrap: break-word;
+overflow-wrap: break-word;
+hyphens: auto;
 }
 .text .accroche {
 font-style: italic;
-font-size: 1.25rem; color: #e0d8cc;
+font-size: 1.25rem;
+color: #e0d8cc;
 letter-spacing: 0.5px;
-margin-bottom: 1.6em; line-height: 1.65;
+margin-bottom: 0.9em;
+line-height: 1.6;
 }
-.text .bloc { color: #aaa; font-style: italic; margin-bottom: 1.1em; }
+.text .bloc {
+color: #aaa;
+font-style: italic;
+margin-bottom: 0.7em;
+}
 .text .bloc:last-child { margin-bottom: 0; }
 
 /* SECTION LABEL */
 .section-label {
-font-family: "Montserrat", sans-serif;
+font-family: “Montserrat”, sans-serif;
 font-size: 11px; letter-spacing: 5px; color: #c6a66b;
 margin-bottom: 28px; text-align: center;
 }
@@ -97,7 +108,7 @@ font-family: ‘Montserrat’, sans-serif; font-size: 10px;
 .carousel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s; }
 .carousel img.active { opacity: 1; }
 
-/* SIGNATURES — style original */
+/* SIGNATURES */
 .products { margin-top: 60px; }
 .product-grid { max-width: 420px; margin: 0 auto; }
 
@@ -125,7 +136,7 @@ transition: width 0.4s ease;
 .product-card:hover::after { width: 100%; }
 
 .product-name {
-font-family: "Cormorant Garamond", serif;
+font-family: “Cormorant Garamond”, serif;
 font-style: italic; font-size: 1.2rem; color: #ccc;
 letter-spacing: 1px; transition: color 0.3s;
 margin-bottom: 4px;
@@ -133,7 +144,7 @@ margin-bottom: 4px;
 .product-card:hover .product-name { color: #fff; }
 
 .product-sub {
-font-family: "Montserrat", sans-serif;
+font-family: “Montserrat”, sans-serif;
 font-size: 9px; letter-spacing: 2px; color: #555;
 margin-bottom: 8px; transition: color 0.3s;
 }
@@ -195,7 +206,8 @@ text-decoration: none; opacity: 0; pointer-events: none; transition: all 0.3s;
   <img src="logo.png" class="logo fade-1" alt="Maison Rameaux">
   <div class="line fade-2"></div>
   <p class="subtitle fade-3" id="sub1">CHARCUTERIE ARTISANALE HALAL</p>
-  <p class="subtitle fade-3" id="sub2">TRAITEUR • ÉPICERIE FINE • MARRAKECH</p>
+  <p class="subtitle fade-3" id="sub2">TRAITEUR • ÉPICERIE FINE</p>
+  <p class="subtitle fade-3" id="sub3">MARRAKECH</p>
 
   <div class="sep"></div>
 
@@ -203,8 +215,8 @@ text-decoration: none; opacity: 0; pointer-events: none; transition: all 0.3s;
     <p class="accroche">L'art de la charcuterie,<br>revisité dans le respect du halal.</p>
     <p class="bloc">Chez Maison Rameaux, chaque produit est façonné à la main.<br>Fumé au bois naturel. Élaboré selon nos propres recettes.</p>
     <p class="bloc">Inspirés du terroir français, de nos racines et de nos voyages —<br>nous créons une charcuterie artisanale d'exception,<br>au cœur de Marrakech.</p>
-    <p class="bloc">Sans conservateur artificiel.<br>100% halal.<br>Du producteur à votre table.</p>
-    <p class="bloc">Notre fierté : la <em>charcuterie de dromadaire</em>.<br>Chorizo, pastrami, saucisson sec, coppa.<br>Une création unique, exclusive à Maison Rameaux.</p>
+    <p class="bloc">Sans colorants ni arômes artificiels. 100% halal.<br>Du producteur à votre table.</p>
+    <p class="bloc">Notre fierté : la <em>charcuterie de dromadaire</em>.<br>Pastrami, chorizo, saucisson sec, coppa.<br>Une création unique, exclusive à Maison Rameaux.</p>
   </div>
 
   <div class="sep"></div>
@@ -287,7 +299,7 @@ text-decoration: none; opacity: 0; pointer-events: none; transition: all 0.3s;
 <script>
 const t = {
   fr: {
-    sub1:"CHARCUTERIE ARTISANALE HALAL", sub2:"TRAITEUR • ÉPICERIE FINE • MARRAKECH",
+    sub1:"CHARCUTERIE ARTISANALE HALAL", sub2:"TRAITEUR • ÉPICERIE FINE", sub3:"MARRAKECH",
     catTitle:"NOTRE CATALOGUE", catH3:"Catalogue Maison Rameaux",
     catDesc:"Charcuterie artisanale · Traiteur · Épicerie fine",
     catBtn:"OUVRIR LE CATALOGUE", catUpdate:"Mis à jour régulièrement",
@@ -302,12 +314,12 @@ const t = {
     blocs:[
       "Chez Maison Rameaux, chaque produit est façonné à la main.<br>Fumé au bois naturel. Élaboré selon nos propres recettes.",
       "Inspirés du terroir français, de nos racines et de nos voyages —<br>nous créons une charcuterie artisanale d'exception,<br>au cœur de Marrakech.",
-      "Sans conservateur artificiel.<br>100% halal.<br>Du producteur à votre table.",
-      "Notre fierté : la <em>charcuterie de dromadaire</em>.<br>Chorizo, pastrami, saucisson sec, coppa.<br>Une création unique, exclusive à Maison Rameaux."
+      "Sans colorants ni arômes artificiels. 100% halal.<br>Du producteur à votre table.",
+      "Notre fierté : la <em>charcuterie de dromadaire</em>.<br>Pastrami, chorizo, saucisson sec, coppa.<br>Une création unique, exclusive à Maison Rameaux."
     ]
   },
   en: {
-    sub1:"HALAL ARTISAN CHARCUTERIE", sub2:"CATERING • FINE GROCERY • MARRAKECH",
+    sub1:"HALAL ARTISAN CHARCUTERIE", sub2:"CATERING • FINE GROCERY", sub3:"MARRAKECH",
     catTitle:"OUR CATALOGUE", catH3:"Maison Rameaux Catalogue",
     catDesc:"Artisan charcuterie · Catering · Fine grocery",
     catBtn:"OPEN CATALOGUE", catUpdate:"Regularly updated",
@@ -322,8 +334,8 @@ const t = {
     blocs:[
       "At Maison Rameaux, every product is handcrafted.<br>Wood-smoked. Made from our own recipes.",
       "Inspired by the French terroir, our roots and our travels —<br>we create exceptional artisanal charcuterie,<br>in the heart of Marrakech.",
-      "No artificial preservatives.<br>100% halal.<br>From our hands to your table.",
-      "Our pride: <em>camel charcuterie</em>.<br>Chorizo, pastrami, dry sausage, coppa.<br>A unique creation, exclusive to Maison Rameaux."
+      "No artificial colours or flavourings. 100% halal.<br>From our hands to your table.",
+      "Our pride: <em>camel charcuterie</em>.<br>Pastrami, chorizo, dry sausage, coppa.<br>A unique creation, exclusive to Maison Rameaux."
     ]
   }
 };
@@ -332,6 +344,7 @@ function setLang(lang) {
   const tx = t[lang];
   document.getElementById('sub1').textContent = tx.sub1;
   document.getElementById('sub2').textContent = tx.sub2;
+  document.getElementById('sub3').textContent = tx.sub3;
   document.getElementById('cat-title').textContent = tx.catTitle;
   document.getElementById('cat-h3').textContent = tx.catH3;
   document.getElementById('cat-desc').textContent = tx.catDesc;
